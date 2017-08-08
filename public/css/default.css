@@ -1,6 +1,7 @@
 body
 {
-	background-color: #272D4E;
+	/*background-color: #272D4E;*/
+	background-color: #ccc;
 }
 
 nav
@@ -12,6 +13,8 @@ nav
 nav ul li a{
   color: black;
 }   
+
+
 
 
 .header-search-wrapper {
@@ -43,6 +46,17 @@ input.header-search-input {
     color:#000;
 }
 
+
+a.collapsible-header
+{
+	padding: 0 32px !important;
+}
+
+a.subItem
+{
+	padding-left: 90px !important;
+}
+
 .header-search-wrapper i {
     position: absolute;
     font-size: 24px;
@@ -55,7 +69,7 @@ input.header-search-input {
 
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:   #F3F;
+    color:   #e2f4ff;
      opacity: 0.8 !important;
 }
 
@@ -82,3 +96,4 @@ ul.side-nav.leftside-navigation {
 {
 	padding:5px;
 }
+
