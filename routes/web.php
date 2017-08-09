@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('/style', function () {
     return view('styletest');
 });
+
+Route::get('/articles', 'ArticlesController@index');
