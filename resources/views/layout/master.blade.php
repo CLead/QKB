@@ -22,35 +22,23 @@
     </header>
 
     <div id="main">
-    <div class="wrapper">
+        <div class="wrapper">
 
-    @include('layout.sidebar')
+        @include('layout.sidebar')
 
         @yield('content')
-        <div class="row">
-            <div class="col s12 m6 l3">
-                <div class="card cyan">
-                Hello
-                </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card orange">
-                Hello
-                </div>
-            </div>
-        </div>
 
-    </div>        
+        </div>        
     </div>
 
-<script>
+    <script>
 
-  $(function() {
-    $(".button-collapse").sideNav();
-  });
+      $(function() {
+        $(".button-collapse").sideNav();
+      });
 
 
-</script>
+    </script>
 
     </body>
 </html>

@@ -19,6 +19,7 @@ Route::get('/style', function () {
 });
 
 Route::get('/articles', 'ArticlesController@index')->name("Articles");
+Route::get('/articles/add', 'ArticlesController@create')->name("ArticlesAdd");
 
 Route::get('/domain', 'DomainController@index')->name("Domains");
 Route::post('/domain/check', 'DomainController@process')->name("DomainsCheck");
