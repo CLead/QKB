@@ -8,13 +8,13 @@
 
                 </div>
                 </li>
-                <li class="bold active"><a href="#" class="waves-effect">
+                <li class="bold active"><a href="<?php echo route('Dashboard');?>" class="waves-effect">
                     <i class="material-icons">dashboard</i>Dashboard</a>
                 </li>
-                <li class="bold"><a href="{{ URL::route('articles/index/') }}" class="waves-effect">
+                <li class="bold"><a href="<?php echo route('Articles');?>" class="waves-effect">
                     <i class="material-icons">help</i>Knowledge Base</a>
                 </li>
-                <li class="bold"><a href="index.html" class="waves-effect">
+                <li class="bold"><a href="<?php echo route('Domains');?>" class="waves-effect">
                     <i class="material-icons">language</i>Domain Info</a>
                 </li>
                 <li class="bold"><a href="index.html" class="waves-effect">

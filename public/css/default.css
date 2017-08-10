@@ -1,7 +1,7 @@
 body
 {
 	/*background-color: #272D4E;*/
-	background-color: #ccc;
+	background-color: #d5d5d5;
 }
 
 nav
@@ -14,7 +14,10 @@ nav ul li a{
   color: black;
 }   
 
-
+h1, h2, h3, h4 {
+    font-family: Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+}
 
 
 .header-search-wrapper {
@@ -117,3 +120,52 @@ ul.side-nav.leftside-navigation {
 	padding:5px;
 }
 
+.Control-Item h2
+{
+
+    color:#fff;
+    font-weight: 300;
+    padding-left: 10px;
+    font-size: 32px;
+
+}
+
+.Control-Item
+{
+    
+}
+
+.card-body
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+}
+
+.card-title
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.card-body .input-field label {
+     color: #000;
+   }
+
+.card-body    .input-field input[type=text]:focus + label {
+ color: #00D;
+}
+
+.card-body .input-field .prefix.active
+{
+  color:#000;
+}
+
+.input-field-button
+{
+    padding-top: 25px;
+    margin-bottom: 10px;
+}

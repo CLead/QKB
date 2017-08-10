@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'DashboardController@index')->name('Dashboard');
 
 
 Route::get('/style', function () {
     return view('styletest');
 });
 
-Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles', 'ArticlesController@index')->name("Articles");
+
+Route::get('/domain', 'DomainController@index')->name("Domains");
+Route::post('/domain/check', 'DomainController@process')->name("DomainsCheck");
