@@ -25,3 +25,8 @@ Route::get('/articles/{article}', 'ArticlesController@show');
 
 Route::get('/domain', 'DomainController@index')->name("Domains");
 Route::post('/domain/check', 'DomainController@process')->name("DomainsCheck");
+
+Route::get('/mailstatus', function()
+	{
+		return view('mailstatus');
+	})->name("MailStatus");

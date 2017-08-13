@@ -6,7 +6,7 @@
 <div class="wrapper">
 	<div class="row">
 		<div class="col l12 m12 s12">
-			<div class="card green lighten-1 Control-Item">
+			<div class="card blue-grey lighten-2 Control-Item">
 				<div class="card-title">
 					<h2>Quad Knowledgebase</h2>
 					<div class="row">
@@ -16,7 +16,7 @@
 				
 					
 
-				<div class="card-body green lighten-4">
+				<div class="card-body blue-grey lighten-4">
 					@include('articles.article')
 				</div>
 			</div>

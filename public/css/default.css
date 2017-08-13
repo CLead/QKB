@@ -89,6 +89,34 @@ a.subItem
 	}
 }
 
+.MailCard
+{
+    padding:10px;
+
+}
+
+.MailCard .HostName
+{
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.MailCard .Status
+{
+    float: right;
+    font-size: 44px;
+    bottom: 50px;
+    position: relative;
+}
+
+.MailCard i.T
+{
+    font-size: 12px;
+    padding-top: 15px;
+    margin-right: :8px;
+}
+
 .menu-button
 {
 	position: fixed;
@@ -122,12 +150,18 @@ ul.side-nav.leftside-navigation {
 
 .Control-Item h2
 {
-
     color:#fff;
     font-weight: 300;
     padding-left: 10px;
-    font-size: 32px;
+    font-size: 30px;
+}
 
+.Control-Item h3
+{
+    color:#fff;
+    font-weight: 300;
+    padding-left: 10px;
+    font-size: 20px;
 }
 
 .Control-Item
@@ -168,4 +202,26 @@ ul.side-nav.leftside-navigation {
 {
     padding-top: 25px;
     margin-bottom: 10px;
+}
+
+
+.Article-Owner
+{
+    color:#777;
+}
+
+.Article-Date
+{
+    color:#999;
+    font-weight: 500;
+}
+
+div.article-body
+{
+    padding: 20px;
+}
+
+.WhiteText
+{
+    color: #eee;
 }

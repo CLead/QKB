@@ -17,7 +17,7 @@
                 <li class="bold"><a href="<?php echo route('Domains');?>" class="waves-effect">
                     <i class="material-icons">language</i>Domain Info</a>
                 </li>
-                <li class="bold"><a href="index.html" class="waves-effect">
+                <li class="bold"><a href="{{ route('MailStatus')}}" class="waves-effect">
                     <i class="material-icons">email</i>Mail Status</a>
                 </li>
                 <li class="">

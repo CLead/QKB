@@ -24,9 +24,10 @@ class ArticlesController extends Controller
 
         $this->validate(request(), [
                 'Title' => 'required|min:4|max:50',
-                'ArticleText' => 'required'
+                'ArticleBody' => 'required'
             ]);
-//      dd(request()->all());
+    
+        dd(request()->all());
         $article = new article;
 
         $article->Title = request('Title');
