@@ -3,15 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\article;
 use DB;
 
 class ArticlesController extends Controller
 {
+
+    public function __construct()       
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index()
     {
     	$articles = article::latest()->get();
     	return view('articles.index', compact('articles'));
+    }
+
+
+    public function index_users(\App\User $User)
+    {
+        dd($User);
+        # code...
     }
 
     public function create()
@@ -27,16 +41,38 @@ class ArticlesController extends Controller
                 'ArticleBody' => 'required'
             ]);
     
-        dd(request()->all());
-        $article = new article;
+        $TagArray = explode('||', request('Tags'));
 
-        $article->Title = request('Title');
-        $article->ArticleText = request('ArticleText');
-        $article->CreatedBy = "No one";
-        $article->save();
+        $article = Article::create([
+            'Title' => request('Title'),
+            'ArticleText' => request('ArticleBody'),
+            'user_id' => auth()->id(),
+            'Excerpt' => request('Excerpt')
+            ]);
+
+
+        foreach ($TagArray as $tag)
+        {
+            if (!empty($tag))
+            {
+                $article->tags()->attach( \App\Tag::firstOrCreate(['Name' => $tag]));
+            }
+        }
+
+        
 
         $articles = DB::table('articles')->get();
         return view('articles.index', compact('articles'));
+    }
+
+    public function search()
+    {
+        //dd(request()->all());
+
+        $search = request('Search');
+
+        dd($search);
+        # code...
     }
 
     public function show(article $article)

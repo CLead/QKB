@@ -1,56 +1,57 @@
-@extends('layout.master')
+@extends('articles.master')
 
+@section('HeaderText')
+<h3>Create New Knowledgebase Article</h3>
+@endsection
 
-@section('content')
+@section('ArticleContent')
 
   <script src="../js/tinymce/tinymce.min.js"></script>
   <script>tinymce.init({ selector:'textarea' });</script>
 
-<div class="wrapper">
+<form method="POST" action="{{route('ArticleNew')}}">
 	<div class="row">
-		<div class="col l12 m12 s12">
-			<div class="card Control-Item blue-grey lighten-2">
-				<div class="card-title">
-					<h2>Quad Knowledgebase</h2>
-					<h3>Create KB Article</h3>
-				</div>
-				<div class="card blue-grey wrapper lighten-4">
-					<form method="POST" action="/articles">
-						<div class="row">
-					
-							{{ csrf_field() }}
 
-							<div class="col l6 s12 m6 input-field ">
-								<input name="Title" id="Title" type="text" class="validate">
-								<label for="Title">Enter Article Title</label>
-							</div>
+		{{ csrf_field() }}
 
-							<div class="col l12 s12 m12 input-field ">
-								<label>Article Body</label>
-								<textarea name="ArticleBody" id="ArticleBody" type="text" class="validate materialize-textarea"></textarea>
-							</div>
+		<div class="col l6 s12 m6 input-field ">
+			<input name="Title" id="Title" type="text" class="validate" required>
+			<label for="Title">Article Title</label>
+		</div>
 
-							<div name="ChipInfo" class="col l12 s12 m12 input-field chips">
-								<input name="Tagsc" id="Tags" type="text">
-								<label for="Tagsc">Enter Tags for post, press enter after each term</label>
-							</div>
-							<input name="Tags" id="Tags" type="hidden">
-							<div class="col l12 s12 m12">
-							  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-							    <i class="material-icons right">send</i>
-							  </button>
-							</div>
-					
-						</div>
-					</form>
-					@include('layout.errors')
-				</div>
-			</div>
+
+		<div class="col l12 s12 m12 input-field ">
+			<label>Article Body</label>
+			<textarea name="ArticleBody" id="ArticleBody" type="text" style="height:300px" class="validate materialize-textarea"></textarea>
+		</div>
+		
+		<div class="col l12 s12 m12 input-field ">
+			<input name="Excerpt" id="Excerpt" type="text" class="validate tooltipped"  data-position="bottom" data-delay="50" data-tooltip="Brief summary of post">
+			<label for="Excerpt">Excerpt</label>
 		</div>
 	</div>
-</div>
+	<div class="row">
+		<div name="ChipInfo" class="col l12 s12 m12 input-field">
+			<span>Enter Tags for post, press enter after each term  <i class="material-icons tooltipped vmiddle"  data-position="bottom" data-delay="50" data-tooltip="Enter tags to label the post.  Press enter after each tag you want to apply">info_outline</i></span>
+			<div class="chips chips-placeholder chips-autocomplete ">
+				<input name="Tagsc" id="Tags" type="text" >
+			</div>
+		</div>
+
+		
+		<div class="col l12 s12 m12">
+		  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+		    <i class="material-icons right">send</i>
+		  </button>
+		</div>
+		<input name="Tags" id="Tags" type="hidden">
+	</div>
+	@include('layout.errors')
+</form>
+					
 
 <script type="text/javascript">
+ $(document).ready(function(){
 	$('.chips').material_chip();
 
 	var Tags = new Array();
@@ -59,7 +60,7 @@
 	 	Tags.push(chip.tag);
 
     	$('#Tags').val(Tags.join("||"));
-  });
+  	});
 
   $('.chips').on('chip.delete', function(e, chip){
     var index = Tags.indexOf(chip.tag);
@@ -71,6 +72,40 @@
 	}	
 
   });
+
+  $('.chips-placeholder').material_chip({
+    placeholder: 'Enter a tag',
+    secondaryPlaceholder: '+Tag',
+  });
+
+  $('.chips-autocomplete').material_chip({
+    autocompleteOptions: {
+      data: {
+        'Software': null,
+        'Hardware': null,
+        'Opera': null,
+        'Email': null,
+        'Accounts': null,
+        'Windows': null,
+        'Server': null,
+        'Network': null,
+        'Backup': null,
+        'VPN': null,
+        'Customer': null,
+        'Remote Access': null,
+        'Printers': null,
+        'Websites': null
+
+      },
+      limit: Infinity,
+      minLength: 1
+    }
+  });
+
+ 
+    $('.tooltipped').tooltip({delay: 50});
+  });
+
 </script>
 
 @endsection

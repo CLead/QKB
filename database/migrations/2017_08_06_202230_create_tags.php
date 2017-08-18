@@ -17,6 +17,12 @@ class CreateTags extends Migration
             $table->increments('id');
             $table->string('Name');
         });
+
+        Schema::create('Article_Tag', function (Blueprint $table) {
+            $table->unsignedInteger('article_id');
+            $table->unsignedInteger('tag_id');
+            $table->primary(['article_id','tag_id']);
+        });
     }
 
     /**
@@ -26,6 +32,8 @@ class CreateTags extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('Article_Tag');
         Schema::dropIfExists('Tags');
+        
     }
 }

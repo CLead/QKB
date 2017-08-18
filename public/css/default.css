@@ -20,23 +20,39 @@ h1, h2, h3, h4 {
 }
 
 
+#NavSearchButton
+{
+    margin-left: 30px;
+}
+
+.ilb
+{
+    display: inline-block;
+}
+
 .header-search-wrapper {
     margin: 10px auto 0 240px;
-    width: calc(100% - 600px);
+    width: 300px;
     height: 40px;
     display: inline-block;
     position: relative;
 }
 
+.TitleNav
+{
+    min-height: 64px;
+}
+
 input.header-search-input:hover {
-    background: rgba(255,255,255,0.7) !important;
+    background: rgba(255,255,255,0.3) !important;
+    color:#000 !important;
 }
 
 input.header-search-input {
     display: block;
     padding-left:30px !important;
     width: 100%;
-    background: rgba(255,255,255,0.3) !important;
+    background: rgba(255,255,255,0.2) !important;
     height: 24px;
     -webkit-transition: all 200ms ease;
     transition: all 200ms ease;
@@ -224,4 +240,34 @@ div.article-body
 .WhiteText
 {
     color: #eee;
+}
+
+.WhiteText a
+{
+    color: #fff;
+}
+
+div.ArticleSideBar
+{
+    border-left: 1px #9db5c5 solid;
+    padding: 15px;
+}
+
+div.ArticleSideBar h4
+{
+    font-size: 1.5rem;
+}
+
+i.vmiddle
+{
+    vertical-align: middle;
+}
+
+label.ControlHeader
+{
+    color:#111;
+    vertical-align: :middle;
+    margin-right: 10px;
+    margin-left:10px;
+    font-size: 12px;
 }

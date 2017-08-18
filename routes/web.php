@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,22 +13,32 @@
 |
 */
 
-Route::get('/', 'DashboardController@index')->name('Dashboard');
+Route::get('/', function()
+	{
+		return view('home');
+	})->name("LandingPage");
+Route::get('/dashboard', 'DashboardController@index')->name('Dashboard')->middleware('auth');
+Route::get('/articles', 'ArticlesController@index')->name("Articles")->middleware('auth');
+Route::get('/articles/search', 'ArticlesController@index')->name("ArticlesSearch")->middleware('auth');
+Route::post('/articles/search', 'ArticlesController@search')->name("ArticlePerformSearch")->middleware('auth');
 
+Route::get('/articles/add', 'ArticlesController@create')->name("ArticlesAdd")->middleware('auth');
+Route::post('/articles', 'ArticlesController@store')->middleware('auth')->name("ArticleNew");
+Route::get('/articles/{article}', 'ArticlesController@show')->name("ShowArticle")->middleware('auth');
+Route::get('/articles/tag/{tag}', 'TagsController@index')->name("ArticlesTag")->middleware('auth');
+Route::get('/articles/user/{user}', 'ArticlesController@index_users')->name("ArticlesUser")->middleware('auth');
 
-Route::get('/style', function () {
-    return view('styletest');
-});
+Route::get('/domain', 'DomainController@index')->name("Domains")->middleware('auth');
+Route::post('/domain/check', 'DomainController@process')->name("DomainsCheck")->middleware('auth');
 
-Route::get('/articles', 'ArticlesController@index')->name("Articles");
-Route::get('/articles/add', 'ArticlesController@create')->name("ArticlesAdd");
-Route::post('/articles', 'ArticlesController@store');
-Route::get('/articles/{article}', 'ArticlesController@show');
-
-Route::get('/domain', 'DomainController@index')->name("Domains");
-Route::post('/domain/check', 'DomainController@process')->name("DomainsCheck");
+Route::get('/logs/quad', "LogsController@index_quad")->name("QuadLog")->middleware('auth');
+Route::get('/logs/aldi', "LogsController@index_aldi")->name("AldiLog")->middleware('auth');
 
 Route::get('/mailstatus', function()
 	{
 		return view('mailstatus');
-	})->name("MailStatus");
+	})->name("MailStatus")->middleware('auth');
+
+Route::get('/login', 'SessionsController@create')->name('login');
+Route::post('/login', 'SessionsController@store');
+Route::get('/logout', "SessionsController@destroy")->name("logout");

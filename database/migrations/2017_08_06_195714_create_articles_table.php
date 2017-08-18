@@ -17,10 +17,10 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('Title');
             $table->text('ArticleText');
-            $table->string('CreatedBy');
-            $table->boolean('Private');
+            $table->string('Excerpt')->nullable();
+            $table->integer('user_id');
+            $table->boolean('Private')->default("0");
             $table->timestamps();
-            $table->timestamp('published_at')->nullable();
         });
     }
 

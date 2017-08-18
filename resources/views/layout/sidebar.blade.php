@@ -3,15 +3,16 @@
         <ul id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y" style="width: 240px;">
                 <li class="user-details cyan darken-2">
                 <div class="row">
-                    
-                        Hello World
-
+                    @if (Auth::check())
+                        {{Auth::user()->name}}
+                        <a href="{{route("logout")}}"><i class="material-icons">lock_open</i>Logout</a>
+                    @endif
                 </div>
                 </li>
                 <li class="bold active"><a href="<?php echo route('Dashboard');?>" class="waves-effect">
                     <i class="material-icons">dashboard</i>Dashboard</a>
                 </li>
-                <li class="bold"><a href="<?php echo route('Articles');?>" class="waves-effect">
+                <li class="bold"><a href="{{ route('Articles') }}" class="waves-effect">
                     <i class="material-icons">help</i>Knowledge Base</a>
                 </li>
                 <li class="bold"><a href="<?php echo route('Domains');?>" class="waves-effect">

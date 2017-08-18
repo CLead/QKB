@@ -15,6 +15,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        view()->composer('articles.sidebar', function($view)
+        {
+            $view->with('TopTags', \App\Tag::get());
+            $view->with('LatestPosts', \App\Article::orderBy('updated_at', 'desc')->take(5)->get());
+
+        }
+        );
+
     }
 
     /**
