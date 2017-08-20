@@ -32,12 +32,12 @@ $(document).ready(function()
 	{
 
 		DisplayHosts();
-		var tid = setInterval(DisplayHosts, 506600);
+		var tid = setInterval(DisplayHosts, 5000);
 
 
 		function DisplayHosts()
 		{
-		$.ajax(
+			$.ajax(
 				{
 					method: "POST",
                     url: "http://toolkit.quad.co.uk/QKB/QKBService.asmx/GetAllMailHosts",
@@ -78,7 +78,7 @@ $(document).ready(function()
                             alert(textStatus);
                         }
 				});
-	}
+		}
 	}
 	);
 

@@ -1,0 +1,45 @@
+div#OutstandingJobsText h3
+{
+    font-size: 20px;
+    padding:4px;
+}
+
+.Slideup-Panel
+{
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+span.Comp, span.LU
+{
+	color:#EEE;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+
+li.CallAction
+{
+	padding-left: 10px;
+	border-bottom : 1px solid #AAA;
+	font-size: 12px;
+}
+
+div.ActionCard
+{
+	margin:5px;
+}
+
+div#JobList
+{
+	height: 584px;
+	overflow: scroll;
+	font-size: 10px;
+}
+
+
+table.striped>tbody>tr:nth-child(odd) {
+    background-color: #90a4ae ;
+}

@@ -8,7 +8,7 @@
                         <div class="header-search-wrapper ">
                             {{ csrf_field() }}
                             <i class="large material-icons">search</i>
-                            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Search Knowledgebase">
+                            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Search Knowledge Base">
                         </div>
                     <input type="submit" id="NavSearchButton" class="btn" value="Search">
                     </form>
