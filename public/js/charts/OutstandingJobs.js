@@ -67,10 +67,63 @@ $(document).ready(function(){
     {
         var CallID =  $(this).data("id");
 
-        $("#model-content").html("<h4>Call Details</h4><p>Showing details for callid" + CallID + "</p>");
+        //$("#Pmodel-content").html("<h4>Call Details</h4><p>Showing details for callid" + CallID + "</p>");
         $('#modelDiv').modal('open');
+        $("#CallDetailsID").text(CallID);
+        $.ajax(
+            {
+                method: "POST",
+                url: "http://toolkit.quad.co.uk/QKB/QKBService.asmx/GetCallDetails",
+                data: { CallID: CallID },
+                dataType: "json",
+                success: function (data) 
+                    {
+                        DisplayCallDetails(data);
+                    },
+                error: function (jqXHR, textStatus, errorThrown) 
+                    {
+                        alert("Failed to get data");
+                    }
+            });
 
     });
+
+
+    function DisplayCallDetails(data)
+    {
+        $("#CallDetailsLoader").addClass("Hidden");
+
+        var CallHTML = "<div class='row'>";
+
+        CallHTML += "<div class='col l4 m6 s12'>Caller: <b>"+data.Person+"</b></div>";
+        CallHTML += "<div class='col l4 m6 s12'>Company: <b>"+data.Company+"</b></div>";
+        CallHTML += "<div class='col l4 m6 s12'>Contact: <b>"+data.ContactNo+"</b></div>";
+
+        CallHTML += "</div>";
+
+        CallHTML += "<table class='striped centered responsive-table'><thead><tr><th>Actioned</th><th>Action</th><th>User</th><th>Details</th></tr></thead><tbody>";
+
+        $.each(data.ActionLines, function(index, d)
+        {
+
+            var dt = new Date(d.Actioned);
+
+            CallHTML += "<tr>";
+            CallHTML += "<td>" + FormatDate(dt) + "</td>";
+            CallHTML += "<td>" + d.ActionType + "</td>";
+            CallHTML += "<td>" + d.Person + "</td>";
+            CallHTML += "<td>" + d.Details + "</td>";
+
+            CallHTML += "</tr>"
+        }
+        );
+
+//Lines.Add(new { Actioned = DR["ActionTime"], ActionType = DR["ActionType"], Details = DR["Detail"], Person = DR["UserID"] });
+
+        CallHTML += "</tbody></table>";
+
+        $("#CallDetails").html(CallHTML);
+    }
 
 		function PlotOutstandingChart(data)
 		{

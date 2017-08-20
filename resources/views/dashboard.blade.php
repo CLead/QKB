@@ -87,10 +87,17 @@
 	</div>
 </div>
 
+
+
+
 <div id="modelDiv" class="modal">
 	<div id="model-content" class="modal-content">
-		<h4>Modal Header</h4>
-		<p>A bunch of text</p>
+		<h4>Call Details: CallID <span id="CallDetailsID"></span></h4>
+		<div id="CallDetails" class="card"></div>
+
+		<div id="CallDetailsLoader" class="preloader-wrapper big active"><div class="spinner-layer spinner-blue-only"><div class="circle-clipper left">
+        <div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right">
+        <div class="circle"></div></div></div></div>
 	</div>
 	<div class="modal-footer">
 		<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>

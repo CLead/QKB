@@ -62,11 +62,13 @@ $(document).ready(function()
                             		StatusClass = "red";
                             	}
 
-                            	var E = "<div class='col l3 m4 s12  '><div class='card MailCard "+ StatusClass+"'>";
-                            	E+= "<p class='HostName'>" + this.HostName+ ":" + this.Port + "</p>";
-								E+= "<p class='Server'>" + this.Server + " - <i class='material-icons T'>access_time</i>" +this.LastKnownGood.toLocaleString() + "</p>";
-								E+= "<i class='material-icons Status'>" + Icon +  "</i>";
-                            	E += "</div></div>"
+                            	var E = "<div class='col l3 m4 s12  '><div class='card  "+ StatusClass+"'>";
+                            	E+= "<div style='font-size:16px' class='card-title "+ StatusClass+" lighten-2'>" + this.HostName+ ":" + this.Port+ "</div>";
+                            	E+= "<div class='card-content'>"
+                            	E+= "<p class='HostName'>Server: " + this.Server + "</p>";
+								E+= "<p class='Server'><i class='material-icons T'>access_time</i>" +this.LastKnownGood.toLocaleString() + "</p>";
+								E+= "<i style='float:right' class='material-icons Status'>" + Icon +  "</i>";
+                            	E += "</div></div></div>"
                             	DataArea.append(E);
 
                             })
