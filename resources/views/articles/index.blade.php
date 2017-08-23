@@ -3,18 +3,29 @@
 
 @section('ArticleContent')
 
-<div class="row">
-	@foreach ($articles as $article)
-		<div>
-		<a href="/articles/{{ $article->id}}" >
-			{{$article->Title}}
-		</a>
-			<p>
-			{!! $article->ArticleText !!}
-			</p>
-			{{$article->created_at}}
-		</div>
-	@endforeach
+<div class="row wrapper">
+  	<ul class="collection">
+@foreach ($articles as $article)
+		<li class="collection-item avatar">
+			<i class="material-icons circle blue-grey lighten-1">help_outline</i>
+		    <a href="/articles/{{ $article->id}}" ><span class="title">{{$article->Title}}</span></a>
+		    <p class="Excerpt">{{ $article->Excerpt}}</p>
+				@foreach ($article->tags as $tag)
+				  <div class="chip">
+				    <a href='{{ route('ArticlesTag', $tag->Name) }}'>{{ $tag->Name }}</a>
+				  </div>
+				@endforeach
+				<br>
+				<span class="SearchDetails">Posted at <b>{{$article->created_at}}</b> by <b>{{ $article->user->name}}</b></span>
+
+				
+		</li>
+@endforeach
+	</ul>
+
+</div>
+<div class="row center">
+	{{ $articles->links() }}
 </div>
 				
 
