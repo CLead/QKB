@@ -45,3 +45,5 @@ Route::get('/logout', "SessionsController@destroy")->name("logout");
 
 
 Route::get('/ajax', function() { return view('welcome');});
+
+Route::get('/NotImplemented', function() { return view('NotImplemented');})->name("missing");

@@ -156,11 +156,13 @@ a.subItem
 	position: fixed;
 	left:20px;
 	top:15px;
+    height: 40px !important;
+    line-height: 40px !important; 
 }
 
 a.menu-button i
 {
-	line-height: 42px;
+	line-height: 42px !important;
 }
 
 #left-sidebar {
@@ -274,6 +276,11 @@ div.ArticleSideBar
 div.ArticleSideBar h4
 {
     font-size: 1.5rem;
+}
+
+span.user
+{
+    padding:20px;
 }
 
 i.vmiddle

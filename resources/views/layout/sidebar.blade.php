@@ -1,11 +1,11 @@
         <aside id="left-sidebar">
 
         <ul id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y" style="width: 240px;">
-                <li class="user-details cyan darken-2">
+                <li class="user-details blue-grey lighten-2">
                 <div class="row">
                     @if (Auth::check())
-                        {{Auth::user()->name}}
-                        <a href="{{route("logout")}}"><i class="material-icons">lock_open</i>Logout</a>
+                        <span class="user"><i class="material-icons vmiddle">person</i>{{Auth::user()->name}}</span>
+                        <a class="btn blue-grey lighten-3 right" style="padding: 0 5px; margin-top: 6px;margin-right: 5px;" href="{{route("logout")}}"><i style="font-size: 12px;padding:0; margin:0" class="material-icons right vmiddle small">lock_open</i>Logout</a>
                     @endif
                 </div>
                 </li>
@@ -36,6 +36,9 @@
                         
                         
                     </ul>
+                </li>
+               <li class="bold"><a href="{{ route('missing')}}" class="waves-effect">
+                    <i class="material-icons">personal_video</i>Customer HW</a>
                 </li>
             </ul>
 

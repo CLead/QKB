@@ -1,7 +1,7 @@
 @extends('articles.master')
 
 @section('HeaderText')
-<h3>Create New Knowledgebase Article</h3>
+<h3>Create New Knowledge Base Article</h3>
 @endsection
 
 @section('ArticleContent')

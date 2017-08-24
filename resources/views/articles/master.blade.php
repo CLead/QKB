@@ -8,7 +8,7 @@
 		<div class="col l12 m12 s12">
 			<div class="card blue-grey lighten-4 Control-Item">
 				<div class="card-title blue-grey lighten-2">
-					<h2>Quad Knowledgebase</h2>
+					<h2>Quad Knowledge Base</h2>
 					<div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; right: 24px; top:35px;">
 						<a  class="btn-large btn-floating red">
 							<i class="material-icons">menu</i>

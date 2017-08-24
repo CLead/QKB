@@ -5,10 +5,10 @@
 
 
 
-<div class="wrapper blue loaded row">
+<div class="wrapper blue-grey darken-4 loaded row">
 		
 
-		<div class="col s12 l4 offset-l4 m6 offset-m3 center z-depth-4 card-panel">
+		<div class="col s12 l4 offset-l4 m6 offset-m3 center z-depth-4 card-panel" style="margin-top:40px;">
 			<form id="formLogin" method="POST" action="/login">
 			{{ csrf_field()}}
 		        <div class="row">
@@ -45,7 +45,11 @@
 				</form>
     		</div>
 
-
+<script>
+$(document).ready(function(){
+	$('body').addClass("blue-grey darken-4");	
+})
+</script>
 
 </div>
 

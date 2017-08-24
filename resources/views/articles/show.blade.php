@@ -8,7 +8,7 @@
 		<div class="col l12 m12 s12">
 			<div class="card blue-grey lighten-2 Control-Item">
 				<div class="card-title">
-					<h2>Quad Knowledgebase</h2>
+					<h2>Quad Knowledge Base</h2>
 					<div class="row">
 						
 					</div>
