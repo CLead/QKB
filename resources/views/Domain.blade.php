@@ -16,12 +16,12 @@
 				<div class="card-body blue lighten-4">
 					<div class="row">
 							<div class="col l5 offset-l2 s12 input-field ">
-								<i class="material-icons prefix">language</i>
+								<i class="material-icons prefix" style="margin-top: 20px;">language</i>
 								<input name="domain_name" id="domain_name" type="text" class="validate">
 								<label for="domain_name">Enter Domain Name</label>
 							</div>
 							<div class="input-field-button col l2 m2 s6 offsel-s6">
-								<button id="btnPost" class="btn waves-effect waves-light blue">Submit
+								<button id="btnPost" class="btn waves-effect waves-light blue" style="margin-top: 20px;">Submit
 			    					<i class="material-icons right">send</i>
 			  					</button>
 			  				</div>
@@ -57,7 +57,7 @@
 				$.ajax(
 				{
 					method: "POST",
-                    url: "http://localhost:62085/QKBService.asmx/GetDomainInfo",
+                    url: "http://toolkit.quad.co.uk/QKB/QKBService.asmx/GetDomainInfo",
                     dataType: "json",
                     data: { DomainInfo: strDom },
 					success: function (data) 
