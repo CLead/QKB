@@ -67,11 +67,13 @@ class ArticlesController extends Controller
 
     public function search()
     {
-        //dd(request()->all());
-
         $search = request('Search');
+        //dd(request::get('Search'));
+        $articles = Article::where('ArticleText', 'like', '%' . $search .'%')->orWhere('Excerpt', 'like', '%' . $search .'%')->paginate(50);
 
-        dd($search);
+        //dd($articles);
+
+        return view('articles.index', compact('articles'));
         # code...
     }
 

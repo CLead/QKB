@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
+    use Searchable;
+    
     protected $fillable = ['Title', 'ArticleText', 'user_id', 'Excerpt'];
 
     public function tags()
