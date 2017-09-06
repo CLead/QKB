@@ -26,9 +26,9 @@
                         <li class="bold"><a class="collapsible-header waves-effect"><i class="material-icons">speaker_notes</i>Logs</a>
                             <div class="collapsible-body" style="">
                                 <ul>
-                                    <li><a href="css-typography.html" class="subItem  indigo lighten-5">Quad Log</a>
+                                    <li><a href="{{ route('missing') }}" class="subItem  indigo lighten-5">Quad Log</a>
                                     </li>
-                                    <li><a href="css-icons.html" class="subItem indigo lighten-5">Aldi Log</a>
+                                    <li><a href="{{ route('missing') }}" class="subItem indigo lighten-5">Aldi Log</a>
                                     </li>
                                 </ul>
                             </div>

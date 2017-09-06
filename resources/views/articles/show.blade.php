@@ -9,16 +9,11 @@
 			<div class="card blue-grey lighten-2 Control-Item">
 				<div class="card-title">
 					<h2>Quad Knowledge Base</h2>
-					<div class="row">
-						
-					</div>
 				</div>
-				
-					
-
 				<div class="card-body blue-grey lighten-4">
 					@include('articles.article')
 				</div>
+
 			</div>
 		</div>
 	</div>

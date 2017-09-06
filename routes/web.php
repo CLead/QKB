@@ -21,6 +21,7 @@ Route::get('/dashboard', 'DashboardController@index')->name('Dashboard')->middle
 Route::get('/articles', 'ArticlesController@index')->name("Articles")->middleware('auth');
 Route::get('/articles/search', 'ArticlesController@index')->name("ArticlesSearch")->middleware('auth');
 Route::post('/articles/search', 'ArticlesController@search')->name("ArticlePerformSearch")->middleware('auth');
+Route::post('/articles/{post}/comments', 'CommentsController@store');
 
 Route::get('/articles/add', 'ArticlesController@create')->name("ArticlesAdd")->middleware('auth');
 Route::post('/articles', 'ArticlesController@store')->middleware('auth')->name("ArticleNew");

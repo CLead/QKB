@@ -166,7 +166,11 @@ $(document).ready(function(){
                         'rgba(54, 235, 127, 0.7)',
                         'rgba(153, 102, 255, 0.7)',
                         'rgba(255, 159, 64, 0.7)',
-                        'rgba(75, 192, 192, 0.7)'
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(242, 35, 12, 0.7)',
+                        'rgba(24, 206, 8, 0.7)'
+
+
                     ];
         	var Backgrounds = [
                         'rgba(255,99,132,1)',
@@ -175,7 +179,9 @@ $(document).ready(function(){
                         'rgba(54, 235, 127, 1)',
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)',
-                        'rgba(75, 192, 192, 1)'
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(242, 35, 12, 1)',
+                        'rgba(24, 206, 8, 1)'
                     ];
 
 	var myDoughnutChart = new Chart(canvasOutstandingJobs, {

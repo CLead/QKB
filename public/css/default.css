@@ -25,6 +25,13 @@ h1, h2, h3, h4 {
 }
 
 
+
+.smallComment
+{
+    font-size: 0.8em;
+    color:#ccc;
+}
+
 #NavSearchButton
 {
     margin-left: 30px;
@@ -267,6 +274,23 @@ div.article-body
     color: #fff;
 }
 
+.bottom
+{
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 10px;
+}
+
+.IconCount
+{
+    display: inline-block;
+    position: relative;
+    left: -40px;
+    top: -20px;
+    width: 30px;
+    text-align: center;
+}
+
 div.ArticleSideBar
 {
     border-left: 1px #9db5c5 solid;
@@ -327,4 +351,9 @@ label.ControlHeader
     padding-top:10px;
     padding-bottom: 10px;
     color:#999;
+}
+
+h3.Dark, h2.Dark, h1.Dark
+{
+    color: #005cad;
 }

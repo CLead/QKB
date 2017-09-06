@@ -75,13 +75,12 @@
 	<div class="col l4 m6 s12">
 		<div class="card blue-grey darken-1">
             <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <span class="card-title">Call Logs</span>
+              <p>Display more details regarding the call logs.</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
+              <a href="{{ route('missing') }}">Quad Logs</a>
+              <a href="{{ route('missing') }}">Aldi Logs</a>
             </div>
           </div>	
 	</div>
