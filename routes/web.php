@@ -30,7 +30,9 @@ Route::get('/articles/tag/{tag}', 'TagsController@index')->name("ArticlesTag")->
 Route::get('/articles/user/{user}', 'ArticlesController@index_users')->name("ArticlesUser")->middleware('auth');
 
 Route::get('/domain', 'DomainController@index')->name("Domains")->middleware('auth');
-Route::post('/domain/check', 'DomainController@process')->name("DomainsCheck")->middleware('auth');
+//Route::post('/domain/check', 'DomainController@process')->name("DomainsCheck")->middleware('auth');
+
+Route::get('/aldistore', function() { return view('AldiStore');})->name("aldistore")->middleware('auth');
 
 Route::get('/logs/quad', "LogsController@index_quad")->name("QuadLog")->middleware('auth');
 Route::get('/logs/aldi', "LogsController@index_aldi")->name("AldiLog")->middleware('auth');

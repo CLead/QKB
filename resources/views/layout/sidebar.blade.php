@@ -15,8 +15,11 @@
                 <li class="bold"><a href="{{ route('Articles') }}" class="waves-effect">
                     <i class="material-icons">help</i>Knowledge Base</a>
                 </li>
-                <li class="bold"><a href="<?php echo route('Domains');?>" class="waves-effect">
+                <li class="bold"><a href="{{ route('Domains') }}" class="waves-effect">
                     <i class="material-icons">language</i>Domain Info</a>
+                </li>
+                <li class="bold"><a href="{{route('aldistore') }}" class="waves-effect">
+                    <i class="material-icons">local_grocery_store</i>Aldi Store Lookup</a>
                 </li>
                 <li class="bold"><a href="{{ route('MailStatus')}}" class="waves-effect">
                     <i class="material-icons">email</i>Mail Status</a>
