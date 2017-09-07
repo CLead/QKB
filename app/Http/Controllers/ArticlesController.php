@@ -61,7 +61,7 @@ class ArticlesController extends Controller
 
         
 
-        $articles = DB::table('articles')->get();
+        $articles = article::latest()->paginate(10);
         return view('articles.index', compact('articles'));
     }
 
