@@ -17,7 +17,7 @@
 					<div class="row">
 							<div class="col l5 offset-l2 s12 input-field ">
 								<i class="material-icons prefix" style="margin-top: 20px;">language</i>
-								<input name="txtStoreID" id="txtStoreID" type="text" class="validate" required>
+								<input name="txtStoreID" id="txtStoreID" type="text" class="validate LargeTextEntry" required>
 								<label for="txtStoreID">Enter Store ID</label>
 							</div>
 							<div class="input-field-button col l2 m2 s6 offsel-s6">
