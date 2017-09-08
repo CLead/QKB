@@ -24,9 +24,27 @@ h1, h2, h3, h4 {
     font-weight: 300;
 }
 
+.article-body h1
+{
+    font-size: 1.6em;
+    font-weight:400;
+}
+
+.article-body h2
+{
+    font-size: 1.4em;
+    font-weight:400;
+}
+
+.article-body h3
+{
+    font-size: 1.2em;
+    font-weight:400;
+}
+
 .LargeTextEntry
 {
-	font-size: 44px;
+	font-size: 44px !important;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
 }

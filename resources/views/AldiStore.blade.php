@@ -16,7 +16,7 @@
 				<div class="card-body cyan lighten-4">
 					<div class="row">
 							<div class="col l5 offset-l2 s12 input-field ">
-								<i class="material-icons prefix" style="margin-top: 20px;">language</i>
+								<i class="material-icons prefix vam">language</i>
 								<input name="txtStoreID" id="txtStoreID" type="text" class="validate LargeTextEntry" required>
 								<label for="txtStoreID">Enter Store ID</label>
 							</div>
@@ -54,6 +54,9 @@
 			{
 
 				var strID = $('#txtStoreID').val();
+
+				$('#CardTitle').removeClass("red orange green");
+				$('#MainCard').removeClass("red orange green");
 
 				$.ajax(
 				{
@@ -105,6 +108,14 @@
                         }
 				});
 
+				var Spinner = "<div class='preloader-wrapper big active'><div class='spinner-layer spinner-blue-only'><div class='circle-clipper left'><div class='circle'></div></div><div class='gap-patch'><div class='circle'></div></div><div class='circle-clipper right'><div class='circle'></div></div></div></div>";
+
+				$("#resultsdiv").removeClass("Hidden");
+				$('#result').html("Looking up store details..." + Spinner);
+				$('#title').html("Please Wait");
+
+				$('#MainCard').addClass("orange");
+				$('#CardTitle').addClass("orange");
 			});
 
 		})

@@ -22,6 +22,8 @@
 		  </div>
 		@endforeach
 	</div>
+	@else
+		<br>
 	@endif
 
 <hr>
@@ -45,6 +47,9 @@
 		@endforeach
 		</ul>
 	</div>
+
+	@else
+		<br>
 	@endif
 
 	<div class="AddComments blue-grey lighten-2">
