@@ -35,7 +35,7 @@
 		<ul class="collection">
 		@foreach ($article->comments as $comment)
 			<li class="collection-item">
-			<article>
+			<article style="     padding-bottom: 10px;">
 				{{ $comment->Comment }}
 
 				<span class="secondary-content smallComment">By
