@@ -35,6 +35,16 @@
 	<div class="col l4 m6 s12">
 		<div class="card blue-grey darken-1">	
 			<div class="card-title blue-grey lighten-1 white-text center">
+				Mail Queues
+			</div>
+            <div class="card-content white-text">
+				<canvas id="MailChart" height="200"></canvas>
+            </div>
+		</div>	
+	</div>
+	<div class="col l4 m6 s12">
+		<div class="card blue-grey darken-1">	
+			<div class="card-title blue-grey lighten-1 white-text center">
 				Weekly Call Freq.
 			</div>
             <div class="card-content white-text">
@@ -133,5 +143,6 @@ $("#CloserSwitch").click(function()
 <script src="/js/charts/JobsOpenedToday.js"></script>
 <script src="/js/charts/WeeklyCalls.js"></script>
 <script src="/js/charts/CallCloser.js"></script>
+<script src="/js/charts/MailChart.js"></script>
 
 @endsection

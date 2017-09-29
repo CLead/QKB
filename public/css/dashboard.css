@@ -34,7 +34,7 @@ div.ActionCard
 
 div#JobList
 {
-	height: 584px;
+	height: 355px;
 	overflow: scroll;
 	font-size: 12px;
 }
