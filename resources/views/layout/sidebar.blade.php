@@ -21,8 +21,22 @@
                 <li class="bold"><a href="{{route('aldistore') }}" class="waves-effect">
                     <i class="material-icons">local_grocery_store</i>Aldi Store Lookup</a>
                 </li>
-                <li class="bold"><a href="{{ route('MailStatus')}}" class="waves-effect">
-                    <i class="material-icons">email</i>Mail Status</a>
+
+                <li class="">
+                    <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-effect"><i class="material-icons">email</i>Email</a>
+                            <div class="collapsible-body" style="">
+                                <ul>
+                                    <li><a href="{{ route('MailStatus')}}" class="subItem  indigo lighten-5"><i class="material-icons" style="margin:0 !important">email</i>Server Status</a>
+                                    </li>
+                                    <li><a href="{{ route('missing') }}" class="subItem indigo lighten-5"><i class="material-icons" style="margin:0 !important">show_chart</i>Queue Status</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
                 </li>
                 <li class="">
                     <ul class="collapsible collapsible-accordion">
