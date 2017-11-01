@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class SessionsController extends Controller
 {
@@ -39,9 +40,8 @@ class SessionsController extends Controller
     	{
     		return back()->withErrors(['message' => 'Invalid Credentials']);
     	}
-
-    	//dd('Success');
-    	return redirect()->route('Dashboard');
+    	
+        return redirect()->route('Dashboard');
     }
 
 }
