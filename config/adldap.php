@@ -158,7 +158,7 @@ return [
                 |
                 */
 
-                'base_dn' => env('ADLDAP_BASEDN', 'OU=Users Standard,DC=quad,DC=local'),
+                'base_dn' => env('ADLDAP_BASEDN', 'OU=QuadStaff,DC=quad,DC=local'),
 
                 /*
                 |--------------------------------------------------------------------------
@@ -187,8 +187,8 @@ return [
                 |
                 */
 
-                'admin_username' => env('ADLDAP_ADMIN_USERNAME', 'carl'),
-                'admin_password' => env('ADLDAP_ADMIN_PASSWORD', 'pythoN'),
+                'admin_username' => env('ADLDAP_ADMIN_USERNAME', ''),
+                'admin_password' => env('ADLDAP_ADMIN_PASSWORD', ''),
 
                 /*
                 |--------------------------------------------------------------------------
