@@ -27,9 +27,9 @@
                         <li class="bold"><a class="collapsible-header waves-effect"><i class="material-icons">email</i>Email</a>
                             <div class="collapsible-body" style="">
                                 <ul>
-                                    <li><a href="{{ route('MailStatus')}}" class="subItem  indigo lighten-5"><i class="material-icons" style="margin:0 !important">email</i>Server Status</a>
+                                    <li><a href="{{ route('MailStatus')}}" class="subItem  indigo lighten-5"><i class="material-icons" style="margin:0 10px 0 0 !important">email</i>Server Status</a>
                                     </li>
-                                    <li><a href="{{ route('missing') }}" class="subItem indigo lighten-5"><i class="material-icons" style="margin:0 !important">show_chart</i>Queue Status</a>
+                                    <li><a href="{{ route('missing') }}" class="subItem indigo lighten-5"><i class="material-icons" style="margin:0 10px 0 0 !important">show_chart</i>Queue Status</a>
                                     </li>
                                 </ul>
                             </div>
@@ -54,9 +54,23 @@
                         
                     </ul>
                 </li>
-               <li class="bold"><a href="{{ route('missing')}}" class="waves-effect">
-                    <i class="material-icons">personal_video</i>Customer HW</a>
+                <li class="">
+                    <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-effect"><i class="material-icons">personal_video</i>Hardware</a>
+                            <div class="collapsible-body" style="">
+                                <ul>
+                                   <li>
+                                        <a href="{{ route('HWCompanies')}}" class="waves-effect bold subItem indigo lighten-5"><i class="material-icons" style="margin: 0 10px 0 0; !important; ">personal_video</i>Customers</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('missing')}}" class="waves-effect bold subItem indigo lighten-5"><i class="material-icons" style="margin: 0 10px 0 0; !important; ">keyboard</i>MT Log</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
+
             </ul>
 
         </aside>

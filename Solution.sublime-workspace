@@ -1,0 +1,482 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Ri",
+				"RiskRegisterID"
+			],
+			[
+				"Kloe",
+				"kloeQuestionID"
+			],
+			[
+				"Klo",
+				"KloeActivityID"
+			],
+			[
+				"User",
+				"UserCompanyID"
+			],
+			[
+				"Asses",
+				"AssessmentID"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"domain",
+				"domain_name"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"b",
+				"background"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config/adldap.php",
+			"settings":
+			{
+				"buffer_size": 9415,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/adldap_auth.php",
+			"settings":
+			{
+				"buffer_size": 7784,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 428.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/xampp/htdocs/QKB",
+		"/E/xampp/htdocs/QKB/public"
+	],
+	"file_history":
+	[
+		"/E/xampp/htdocs/QKB/app/Http/Controllers/SessionsController.php",
+		"/E/xampp/htdocs/QKB/config/app.php",
+		"/E/xampp/htdocs/QKB/config/adldap_auth.php",
+		"/E/xampp/htdocs/QKB/config/auth.php",
+		"/F/BH/Phase 3/ST2OP_201705.txt",
+		"/F/BH/Phase 3/Temp.txt",
+		"/O/Development/Metals4U/HelpfulDatabaseScripts/SecondLevelCategories - Scratch Pad Live v Test.sql",
+		"//QUAD17/c$/WebSites/download.quad.co.uk/QuadFileHandler.ashx",
+		"/E/Temp/vue.html",
+		"//QUAD17/c$/WebSites/kb.quad.co.uk/public/index.php",
+		"/E/xampp/htdocs/QKB/resources/views/layout/sidebar.blade.php",
+		"/E/xampp/htdocs/QKB/resources/views/layout/master.blade.php",
+		"/E/xampp/htdocs/QKB/composer.json",
+		"/E/xampp/htdocs/QKB/resources/views/dashboard.blade.php",
+		"/E/xampp/htdocs/QKB/app/Http/Controllers/ArticlesController.php",
+		"/E/xampp/htdocs/QKB/resources/views/layout.blade.php",
+		"/E/xampp/htdocs/QKB/app/Http/Controllers/DashboardController.php",
+		"/E/xampp/htdocs/QKB/config/database.php",
+		"/E/xampp/htdocs/QKB/.env",
+		"/E/xampp/htdocs/QKB/resources/views/articles/index.blade.php",
+		"/F/Aldi Manipulation/Output/PayDataOut.csv",
+		"/F/Aldi Manipulation/Input/PayDataSample.csv",
+		"/E/HDD Temp/$$folder_14915/joeljennings321891589 - Archive.xml",
+		"/E/HDD Temp/$$folder_14915/joeljennings321891589.xml",
+		"/E/HDD Temp/$$folder_14915/billisill661591183271.xml",
+		"/E/HDD Temp/$$folder_14915/avrilthevegetable1884483789.xml",
+		"/E/HDD Temp/$$folder_14915/party_chick19851914593315.xml",
+		"/E/HDD Temp/$$folder_14915/caroline_r3523399894.xml",
+		"/E/HDD Temp/$$folder_14915/rebekah_hazel3351289240.xml",
+		"//QUAD09/c$/Websites/hillsboroughsteelstock.co.uk/index.html",
+		"//QUAD09/c$/Websites/hillsboroughsteelstock.co.uk/contact_us.html",
+		"/E/Programming/C#/Aldi_OAK_Importer/OAK User import/OAK User import/Configuration.xml",
+		"/F/Aldi rounding/Manual and Accepted Punches/2016-07.csv",
+		"/F/Aldi rounding/Manual and Accepted Punches/2016-09.csv",
+		"/F/Aldi rounding/Manual and Accepted Punches/2016-08.csv",
+		"//quad10/e$/Aldi/2016-09.csv",
+		"//quad10/e$/Aldi/AllRawPunches2.csv",
+		"//quad10/e$/Aldi/AllRawPunches1.csv",
+		"//quad07.quad.local/c$/Websites/303sqn.co.uk/wordpress/wp-content/themes/hestia/list-category-posts/storytemplate.php",
+		"//quad07.quad.local/c$/Websites/303sqn.co.uk/web.config",
+		"//quad10/e$/Aldi/2016-03.csv",
+		"//quad10/e$/Aldi/2016-05.csv",
+		"//quad10/e$/Aldi/2016-04.csv",
+		"//quad10/e$/Aldi/2016-06.csv",
+		"//quad10/e$/Aldi/2016-08.csv",
+		"//quad10/e$/Aldi/2016-07.csv",
+		"//quad10/e$/Aldi/2016-12.csv",
+		"//quad10/e$/Aldi/2016-10.csv",
+		"//quad10/e$/Aldi/2016-11.csv",
+		"//quad10/e$/Aldi/2017-01.csv",
+		"//quad10/e$/Aldi/2017-02.csv",
+		"//quad10/e$/Aldi/2017-03.csv",
+		"//quad10/e$/Aldi/2017-04.csv",
+		"//quad10/e$/Aldi/2017-05.csv",
+		"//quad10/e$/Aldi/2017-06.csv",
+		"//quad04/e$/Inetpub/intranet.quad.co.uk/video.html",
+		"/F/Aldi rounding/New Data/AllRawPunches2.csv",
+		"/F/Aldi rounding/All Raw Punches (Accepted & Rejected)/AllRawPunches-872076.csv",
+		"/F/Aldi rounding/X/Configuration.xml",
+		"/F/Aldi rounding/Manual and Accepted Punches/2016-05.csv",
+		"/F/Aldi rounding/All Raw Punches (Accepted & Rejected)/AllRawPunches-150617.csv",
+		"/E/Programming/C#/Aldi_OAK_Importer/OAK User import/OAK User import/bin/Debug/Configuration.xml",
+		"//quad07.quad.local/c$/Websites/paperclipadmin.co.uk/wp-config.php",
+		"/E/Temp/TBIMPSettings.xml",
+		"/C/Users/carl/Desktop/time.xml",
+		"/C/Users/carl/Desktop/ME4U_04636512.DESADV.done",
+		"//quad07.quad.local/c$/Websites/303sqn.co.uk/wordpress/wp-content/themes/hestia/functions.php",
+		"//quad07.quad.local/c$/Websites/303sqn.co.uk/wordpress/wp-content/themes/303/style.css",
+		"//quad07.quad.local/c$/Websites/303sqn.co.uk/wordpress/wp-content/themes/303/functions.php",
+		"//quad07.quad.local/c$/Websites/dixondawson.co.uk/Wordpress/wp-includes/default-filters.php",
+		"//quad07.quad.local/c$/Websites/dixondawson.co.uk/Wordpress/wp-content/themes/DixonDawson/content.php",
+		"//quad07.quad.local/c$/Websites/dixondawson.co.uk/Wordpress/wp-content/themes/DixonDawson/single.php",
+		"//quad07.quad.local/c$/Websites/dixondawson.co.uk/Wordpress/wp-content/themes/DixonDawson/page.php",
+		"//quad07.quad.local/c$/Websites/dixondawson.co.uk/Wordpress/wp-content/themes/DixonDawson/page-templates/News.php",
+		"//quad07.quad.local/c$/Websites/dixondawson.co.uk/Wordpress/wp-content/themes/DixonDawson/functions.php",
+		"//quad07.quad.local/c$/Websites/303sqn.co.uk/wordpress/wp-content/themes/hestia/style.css",
+		"//quad07.quad.local/c$/Websites/dixondawson.co.uk/Wordpress/wp-content/themes/DixonDawson/index.php",
+		"//quad07.quad.local/c$/Websites/dixondawson.co.uk/Wordpress/wp-content/themes/DixonDawson/sidebar-front.php",
+		"/E/Programming/Web/SheffieldTransmissionDevelopments/Products.aspx.cs",
+		"/E/Programming/Web/SheffieldTransmissionDevelopments/App_Code/tabledata.cs",
+		"/E/Programming/Web/Testing/WebTestItems/WebTestItems/TestService.asmx.cs",
+		"//quad07/c$/Websites/new.falconpcc.com/wordpress/wp-content/themes/blackwell/css/custom.css",
+		"//quad07/c$/Websites/new.falconpcc.com/wordpress/wp-content/themes/blackwell/header.php"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"10700053",
+			"10700053\n",
+			" - Matched",
+			"Matched",
+			"10701182",
+			"StaticContent",
+			"2045",
+			"insert",
+			"select",
+			"exec",
+			"update",
+			"set",
+			"update",
+			"Temp",
+			"pen",
+			"<Message .*>",
+			"<Message * >",
+			"<Text Style=\"font-family:Franklin Gothic Medium; color:#800080; \">",
+			"<From><User FriendlyName=\"Defloration By Unlawful Carnal Knowledge\"/></From><To><User FriendlyName=\"Mina Harker\"/></To>",
+			"</From><To><User FriendlyName=\"Defloration By Unlawful Carnal Knowledge\"/>",
+			"DSC",
+			"DCS",
+			"enqu",
+			",\\d{9,},",
+			",\\d{8,},",
+			",\\d{9,},",
+			",\\d{10,},",
+			",\\d{6,},",
+			",(.*){6,},",
+			",(.*){6,}(\\1\\1\\1),",
+			",(.*){6,}(\\1),",
+			",(.*){6,}(0),",
+			",(.*){6,}(1),",
+			",(.*){6,}(5),",
+			",(.*){6,}(),",
+			",(.*){6,},",
+			",(.*){6,}1,",
+			",(.*){6,}11,",
+			",(.*){4,}111,",
+			",(.*){6,}111,",
+			",(.*){6,}(111),",
+			",(.*){6,}111,",
+			",(.*){6,},",
+			",(.*){6,}[111],",
+			",(.*){6,}111,",
+			",(.*{6,})111,",
+			"111,",
+			"?????111,",
+			"111,",
+			"111",
+			"10203684111",
+			"Craig Peel, Wolverhampton",
+			"10203684111",
+			"10608393111",
+			"Peel, Wolverhampton",
+			"872076\n",
+			"category",
+			"exclude",
+			"remove_filter",
+			"the_excerpt",
+			"wpauto",
+			"add_filter(",
+			"remove_filter",
+			"remove"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			"\\n",
+			"10203684",
+			"Craig Peel Wolverhampton",
+			"10203684",
+			"10608393",
+			"Peel Wolverhampton"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config/adldap.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3683,
+								3683
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2322.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "config/adldap_auth.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7784,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7380,
+								7380
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3942.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Solution.sublime-project",
+	"replace":
+	{
+		"height": 73.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dashcss",
+				"public\\css\\dashboard.css"
+			],
+			[
+				"dash",
+				"resources\\views\\dashboard.blade.php"
+			],
+			[
+				"side",
+				"resources\\views\\layout\\sidebar.blade.php"
+			],
+			[
+				"vieartin",
+				"resources\\views\\articles\\index.blade.php"
+			],
+			[
+				".css",
+				"public\\css\\default.css"
+			],
+			[
+				"articles",
+				"app\\Http\\Controllers\\ArticlesController.php"
+			],
+			[
+				"view/arti",
+				"resources\\views\\articles\\index.blade.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 298.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

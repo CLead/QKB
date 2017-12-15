@@ -46,6 +46,15 @@ Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', "SessionsController@destroy")->name("logout");
 
+Route::get('/HW/Companies', 'CompanyController@index')->name('HWCompanies')->middleware('auth');
+Route::get('/HW/Company/add', 'CompanyController@create')->name('HWCompaniesAdd')->middleware('auth');
+Route::get('/HW/Company/{company}/edit', 'CompanyController@edit')->name('HWCompaniesEdit')->middleware('auth');
+Route::patch('/HW/Company/{company}', 'CompanyController@update')->name('HWCompaniesUpdate')->middleware('auth');
+Route::post('/HW/Companies', 'CompanyController@store')->middleware('auth')->name("CompanyNew");
+
+Route::get('/HW/Computers', 'ComputerController@index')->name('Computers')->middleware('auth');
+Route::get('/HW/Computers/Company/{company}', 'ComputerController@CompanyComputers')->name('Computers')->middleware('auth');
+
 
 Route::get('/ajax', function() { return view('welcome');});
 

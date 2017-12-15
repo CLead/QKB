@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'connections' => [
+    'connections' => array(
 
 
         'mysql' => [
@@ -49,8 +49,18 @@ return [
             'engine' => null,
         ],
 
+        'SQLTK' => [
+            'driver' => 'sqlsrv',
+            'host' => 'Quad10\quad',
+            'database' => 'QuadToolKit',
+            'username' => 'sa',
+            'password' => 'CrystalSpr1ngs',
+            'prefix' => '',
+        ]
 
-    ],
+        //  NEED PDO_SQLSRV http://php.net/manual/en/ref.pdo-sqlsrv.php
+        //  https://docs.microsoft.com/en-us/sql/connect/php/loading-the-php-sql-driver
+    ),
 
     /*
     |--------------------------------------------------------------------------

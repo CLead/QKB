@@ -384,3 +384,14 @@ h3.Dark, h2.Dark, h1.Dark
 {
     color: #005cad;
 }
+
+.OrangeFont
+{
+    color: #ff9800 !important
+}
+
+
+.cardpad
+{
+    padding: 5px;
+}
