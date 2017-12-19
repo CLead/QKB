@@ -1,5 +1,5 @@
     <div class="navbar-fixed">
-        <nav class="blue-grey TitleNav">
+        <nav class="blue-grey lighten-1 TitleNav">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo"><i style="font-size: 48px;" class="material-icons large">help_outline</i> Quad-KB</a>
                 <a id="button-collapse" href="#" data-activates="slide-out" class="button-collapse sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only menu-button teal"><i class="material-icons">menu</i></a>

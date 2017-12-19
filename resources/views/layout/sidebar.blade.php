@@ -4,8 +4,12 @@
                 <li class="user-details blue-grey lighten-2">
                 <div class="row">
                     @if (Auth::check())
+                    <div class="col s10">
                         <span class="user"><i class="material-icons vmiddle">person</i>{{Auth::user()->name}}</span>
-                        <a class="btn blue-grey lighten-3 right" style="padding: 0 5px; margin-top: 6px;margin-right: 5px;" href="{{route("logout")}}"><i style="font-size: 12px;padding:0; margin:0" class="material-icons right vmiddle small">lock_open</i>Logout</a>
+                    </div>
+                    <div class="col s2">
+                        <a class="btn blue-grey lighten-3 right" style="padding: 0 5px; margin-top: 6px;margin-right: 5px;" href="{{route("logout")}}"><i style="font-size: 12px;padding:0; margin:0" class="material-icons right vmiddle small tooltipped" data-position="bottom" data-delay="50" data-tooltip="Logout">power_settings_new</i></a>
+                    </div>
                     @endif
                 </div>
                 </li>

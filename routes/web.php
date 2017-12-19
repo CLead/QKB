@@ -53,7 +53,9 @@ Route::patch('/HW/Company/{company}', 'CompanyController@update')->name('HWCompa
 Route::post('/HW/Companies', 'CompanyController@store')->middleware('auth')->name("CompanyNew");
 
 Route::get('/HW/Computers', 'ComputerController@index')->name('Computers')->middleware('auth');
-Route::get('/HW/Computers/Company/{company}', 'ComputerController@CompanyComputers')->name('Computers')->middleware('auth');
+Route::get('/HW/Computers/Company/{company}', 'ComputerController@CompanyComputers')->name('CompanyComputers')->middleware('auth');
+Route::get('/HW/Computers/{computer}', 'ComputerController@show')->name('ComputersInfo')->middleware('auth');
+Route::get('/HW/Computers/{computer}/DataTransfers', 'ComputerController@showtransfers')->name('ComputerData')->middleware('auth');
 
 
 Route::get('/ajax', function() { return view('welcome');});

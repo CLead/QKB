@@ -382,7 +382,8 @@ label.ControlHeader
 
 h3.Dark, h2.Dark, h1.Dark
 {
-    color: #005cad;
+    color: #004c8d;
+    font-weight:400;
 }
 
 .OrangeFont
@@ -390,8 +391,52 @@ h3.Dark, h2.Dark, h1.Dark
     color: #ff9800 !important
 }
 
+.ForeWhite
+{
+    color:#FEFEFE;
+}
+
+.ForeDark
+{
+    color:#222;
+}
 
 .cardpad
 {
     padding: 5px;
 }
+
+.tabs .tab a
+{
+    color: rgb(140,140,255);
+    
+}
+
+.tabs .tab a.active
+{
+    color: red;
+    font-weight: 500;
+}
+
+.HighlightText
+{
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.TightRow tr td
+{
+    padding-top: 5px;
+    padding-bottom:  5px;
+}
+
+a.Light
+{
+    color:#FFFFFF;
+}
+
+.IconMiddle
+{
+    vertical-align: middle;
+}
+

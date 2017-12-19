@@ -9,27 +9,29 @@
 				<div class="card  grey darken-1 Control-Item">
 					<div class="card-title">
 						<h2>Registered Computers</h2>
+						<h3>{{ $company->CompanyName }}</h3>
 					</div>
 					
-					<a href="{{ route('HWCompaniesAdd') }}" style="margin:5px" class="waves-effect waves-light btn"><i class="material-icons left">add_box</i>Create New</a>
+					<a href="{{ route('HWCompanies') }}" style="margin:5px" class="waves-effect waves-light blue btn"><i class="material-icons left">chevron_left</i>Back</a>
 					<div class="card-body grey lighten-3">
 
 						<div id="dataarea" class="row wrapper">
-							<h3 class="OrangeFont">Active Companies</h3>
 								<table>
 									<thead>
 										<th></th>
 										<th>ID</th>
-										<th>Identifier</th>
 										<th>Computer Name</th>
+										<th>Date Enrolled</th>
+										<th>Identifier</th>
 									</thead>
 									<tbody>
-										@foreach ($Computers as $Computer)
+										@foreach ($company->computers as $Computer)
 										<tr>
-											<td><a href="">Edit</a></td>
+											<td><a href="{{route('ComputersInfo', $Computer->id) }}">Details</a></td>
 											<td>{{ $Computer->id }}</td>
+											<td><i class="material-icons left">personal_video</i>{{ $Computer->PCName}}</td>
+											<td>{{ $Computer->DateEnrolled}}
 											<td>{{ $Computer->Identifier}}</td>
-											<td>{{ $Computer->PCName}}</td>
 										</tr>
 											
 										@endforeach
@@ -37,9 +39,7 @@
 								</table>
 						</div>
 					</div>
-					<div class="row center">
-						{{ $Computers->links() }}
-					</div>
+
 				</div>
 			</div>
 		</div>

@@ -31,17 +31,26 @@
 									<thead>
 										<th></th>
 										<th>Company Name</th>
+										<th>Assigned PCs</th>
 										<th>Enabled</th>
 										<th>Registration Code</th>
 										<th>Account Code</th>
 										<th>Admin Email</th>
-										<th>Assigned PCs</th>
 									</thead>
 									<tbody>
 										@foreach ($Companies as $company)
 										<tr>
-											<td><a href="{{route('HWCompaniesEdit', $company->id)}}">Edit</a></td>
+											<td>
+												<a href="{{route('HWCompaniesEdit', $company->id)}}">Edit</a>
+
+											</td>
 											<td>{{ $company->CompanyName }}</td>
+											<td>
+												{{ count($company->computers) }}
+												@if (count($company->computers) > 0)
+													<a href="{{route('CompanyComputers', $company->id)}}">View</a>
+												@endif
+											</td>
 											<td>
 												@if ($company->Active == 1)
 													<i class="material-icons green">check</i>
@@ -52,12 +61,6 @@
 											<td>{{ $company->RegistrationCode}}</td>
 											<td>{{ $company->CompanyCode}}</td>
 											<td>{{ $company->AdminEmail}}</td>
-											<td>
-												{{ count($company->computers) }}
-												@if (count($company->computers) > 0)
-													<a href="{{route('Computers', $company->id)}}">Show</a>
-												@endif
-											</td>
 										</tr>
 											
 										@endforeach
