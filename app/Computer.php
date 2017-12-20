@@ -22,6 +22,11 @@ class Computer extends Model
     	return $this->hasMany(HDUsage::class, 'PCID', 'id');
     }
 
+    public function reportedHardware()
+    {
+        return $this->hasOne(ReportedHardware::class, 'PCID', 'id');
+    }
+
     public function datatransfers()
     {
         return $this->hasMany(DataTransfer::class, 'PCID', 'id');
@@ -29,7 +34,9 @@ class Computer extends Model
 
     public function datatransfersLatestItems()
     {
-        return $this->hasMany(DataTransfer::class, 'PCID', 'id');
+        return $this->hasMany(DataTransfer::class, 'PCID', 'id')->orderby('TransferDate', 'desc')->take(10);
+        //
+        //$Transfers = $computer->datatransfers()->orderby('TransferDate', 'desc')->paginate(20);
     }
 
     public function AVInfo()

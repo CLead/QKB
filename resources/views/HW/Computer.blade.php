@@ -18,7 +18,37 @@
 
 						<tabs>
 							<tab name="Details" class="active" :selected="true">
-								<h3 class="Dark">Hardware Details</h3>
+								<h3 class="Dark">Hardware Information</h3>
+								<div class="row">
+									<div class="col l6 m12 s12">
+										<h4>Data sent by client</h4>
+										@if (count($computer->reportedHardware)>0)									
+											<ul>
+												<li><label class="HWTitle" for="">Name</label><span>{{$computer->PCName}}</span></li>
+												<li><label class="HWTitle" for="">Description</label><span>{{$computer->reportedHardware->PCDescription}}</span></li>
+												<li><label class="HWTitle" for="">CPU</label><span>{{$computer->reportedHardware->CPU}}</span></li>
+												<li><label class="HWTitle" for="">Memory</label><span>{{$computer->reportedHardware->Memory}}</span></li>
+												<li><label class="HWTitle" for="">OS</label><span>{{$computer->reportedHardware->OperatingSystem}}</span></li>
+												<li><label class="HWTitle" for="">BIOS</label><span>{{$computer->reportedHardware->BIOS}}</span></li>
+												<li><label class="HWTitle" for="">IDE</label><span>{{$computer->reportedHardware->IDEController}}</span></li>
+												<li><label class="HWTitle" for="">Video</label><span>{{$computer->reportedHardware->VideoController}}</span></li>
+												<li><label class="HWTitle" for="">CD</label><span>{{$computer->reportedHardware->CD}}</span></li>
+												<li><label class="HWTitle" for="">Domain</label><span>{{$computer->reportedHardware->DomainName}}</span></li>
+												<li><label class="HWTitle" for="">Local IP</label><span>{{$computer->reportedHardware->LocalIP}}</span></li>
+												<li><label class="HWTitle" for="">Gateway</label><span>{{$computer->reportedHardware->DefaultGateway}}</span></li>
+											</ul>
+										@else
+											<div class="col s12 yellow lighten-4" style="margin:10px;">
+												<h3 class="Dark">No Hardware Data Received For This Computer</h3>
+											</div>
+											
+										@endif
+									</div>
+									<div class="col l6 m12 s12">
+										<h4><i class="material-icons">link</i>MT Record</h4>
+										<label>Not yet implemented - link to the red book hardware information</label>
+									</div>
+								</div>
 							</tab>
 							<tab name="HDD Usage">
 								<h3 class="Dark">Current Hard Disk Usage</h3>
@@ -135,7 +165,9 @@
 												</tr>
 												<tr>
 													<td><label>Time:</label></td>
-													<td>{{$Transfer->TransferDate}}</td>
+													<td>
+														{{ Carbon\Carbon::parse($Transfer->TransferDate)->toRfc1036String() }}
+													</td>
 												</tr>
 												<tr>
 													<td><label>IP:</label></td>
@@ -165,137 +197,6 @@
 	<script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
 	<script src="/js/HW/ComputerTabs.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-
-	<script>
-		$(document).ready()
-		{
-			$('.size').each(function(e)
-			{
-				var Value = $(this).text();
-
-				if (Value > (Math.pow(1024,4)))
-				{
-					var Temp = Value / (Math.pow(1024,4));
-					$(this).text(Math.round(Temp,2) + ' TB');
-				}
-				else
-				{
-					if (Value > (Math.pow(1024,3)))
-					{
-						var Temp = Value / (Math.pow(1024,3));
-						$(this).text(Math.round(Temp,2) + ' GB');
-					}
-				}
-			}
-			);
-
-			$('.Chart').each(function(e)
-			{
-
-				var Percent = $(this).attr('val');
-				PlotOutstandingChart(this.id, Math.round(Percent,1))
-			});
-
-		function PlotOutstandingChart(Canv, data)
-		{
-			//alert(data);
-			//var groupedData = _.groupBy(data, function(d){return d.Closed});
-
-
-			var Labels = ["Used Space", "Free Space"];
-            var Closed = 0, Open = 0;
-			var JobCounts = [];
-
-			JobCounts.push(data);
-			JobCounts.push(100-data);
-//Canv
-	        var canvas = document.getElementById(Canv).getContext('2d');
-
-        	var Colours = [
-                        'rgba(200, 26, 36, 0.7)',
-                        'rgba(80, 80, 80, 0.7)'
-                    ];
-        	var Backgrounds = [
-                        'rgba(200, 26,36,1)',
-                        'rgba(80, 80, 80, 1)'
-                    ];
-
-	var myDoughnutChart = new Chart(canvas, {
-    type: 'doughnut',
-    data: {
-        labels: Labels,
-        datasets: [{
-            label: '# of Calls',
-            fontColor: 'rgb(100,200,200)',
-            data: JobCounts,
-            backgroundColor: Colours,
-            borderColor: Backgrounds,
-            borderWidth: 2
-        }]
-    },
-    options: {
-    	legend:{
-    		display:true,
-    		labels:{fontColor: 'rgb(50,50,50)'}
-    	},
-    	elements: {
-      center: {
-      text: data + '%',
-      color: '#202020', //Default black
-      fontStyle: 'Helvetica', //Default Arial
-      sidePadding: 30 //Default 20 (as a percentage)
-    }
-  }
-    }
-});
-};
-
-
- Chart.pluginService.register({
-  beforeDraw: function (chart) {
-    if (chart.config.options.elements.center) {
-      //Get ctx from string
-      var ctx = chart.chart.ctx;
-
-      //Get options from the center object in options
-      var centerConfig = chart.config.options.elements.center;
-      var fontStyle = centerConfig.fontStyle || 'Arial';
-      var txt = centerConfig.text;
-      var color = centerConfig.color || '#000';
-      var sidePadding = centerConfig.sidePadding || 20;
-      var sidePaddingCalculated = (sidePadding/100) * (chart.innerRadius * 2)
-      //Start with a base font of 30px
-      ctx.font = "30px " + fontStyle;
-
-      //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
-      var stringWidth = ctx.measureText(txt).width;
-      var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
-
-      // Find out how much the font can grow in width.
-      var widthRatio = elementWidth / stringWidth;
-      var newFontSize = Math.floor(30 * widthRatio);
-      var elementHeight = (chart.innerRadius * 2);
-
-      // Pick a new font size so it will not be larger than the height of label.
-      var fontSizeToUse = Math.min(newFontSize, elementHeight);
-
-      //Set font settings to draw it correctly.
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
-      var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
-      ctx.font = fontSizeToUse+"px " + fontStyle;
-      ctx.fillStyle = color;
-
-      //Draw text in center
-      ctx.fillText(txt, centerX, centerY);
-    }
-  }
-});
-
-
-
-		};
-	</script>
+	<script src="/js/HW/hddchart.min.js"></script>
 
 @endsection
