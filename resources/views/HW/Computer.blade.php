@@ -193,7 +193,6 @@
 			</div>
 		</div>
 	</div>
-
 	<script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
 	<script src="/js/HW/ComputerTabs.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
