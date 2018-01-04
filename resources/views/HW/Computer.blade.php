@@ -199,4 +199,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 	<script src="/js/HW/hddchart.min.js"></script>
 
+	<script type="text/x-template" id="tab-template">
+		<div>
+			<ul class="tabs">
+				<li v-for="tab in tabs" :class="{ 'active tab col s3' : tab.isActive}" class="tab col s3">
+					<a :href="tab.href" @click="selectTab(tab)">{{ tab.name }}</a>
+				</li>
+		    </ul>
+			<div class="tabs-details">
+				<slot></slot>
+			</div>
+		</div>
+	</script>
+
 @endsection
