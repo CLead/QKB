@@ -1,6 +1,6 @@
 Vue.component('tabs', {
 
-	template:'#tab-template',
+	template:'<div><ul class="tabs"><li v-for="tab in tabs" :class="{ \'active tab col s3\' : tab.isActive}" class="tab col s3"><a :href="tab.href" @click="selectTab(tab)">{{ tab.name }}</a></li></ul><div class="tabs-details"><slot></slot></div></div>',
 	data() {
 		return {tabs: []};
 	},
