@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">  
         <link rel="stylesheet" href="{{ URL::asset('css/default.css') }}?t=51">
 
+        <link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon">
         
 
     </head>
