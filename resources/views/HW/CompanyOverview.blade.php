@@ -30,7 +30,7 @@
 					<div class="Title">Inactive PCs</div>
 					<div>
 						<i class="medium material-icons IconMiddle" style="color:#F50;">personal_video</i>
-						<span class="value">{{ $company->getActiveComputers()}}</span>
+						<span class="value">{{ $company->getInActiveComputers()}}</span>
 					</div>
 				</div>
 			</div>
