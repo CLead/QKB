@@ -70,8 +70,8 @@ table.striped>tbody>tr:nth-child(odd) {
 
 .AVState0
 {
-	background-color: #EE0000A0;
-	border: 2px solid #EE0000FF;
+	background-color: rgba(238, 0, 0, 200);
+	border: 2px solid rgba(238, 0, 0, 250);
 	color:#FFF;
 	padding: 2px;
 	margin:2px;
@@ -79,8 +79,8 @@ table.striped>tbody>tr:nth-child(odd) {
 
 .AVState1
 {
-	background-color: #3b6d3bA0;
-	border: 2px solid #3b6d3bFF;
+	background-color: rgba(59, 109, 59, 200);
+	border: 2px solid rgba(59, 109, 59, 250);
 	color:#FFF;
 	padding: 2px;
 	margin:2px;

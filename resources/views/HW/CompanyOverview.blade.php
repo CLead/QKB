@@ -9,7 +9,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>    
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">  
         <link rel="stylesheet" href="{{ URL::asset('css/default.css') }}?t=2">
-        <link rel="stylesheet" href="{{ URL::asset('css/dashboard.css') }}?t=2">
+        <link rel="stylesheet" href="{{ URL::asset('css/dashboard.css') }}?t=4">
+
 		<title>Company Overview</title>
 	</head>
 	<body class="blue-grey darken-3">
@@ -76,7 +77,7 @@
 									@foreach($Computer->LatestDiskUsage as $HDD)
 										
 										<div class="PercentBack">
-											<div class="PercentFore" style="width:{{$HDD->PercentageUsed}}%; background-color: #{{$HDD->getPercentColour()}};">
+											<div class="PercentFore" style="width:{{$HDD->PercentageUsed}}%; background: #{{$HDD->getPercentColour()}};">
 											</div>
 										</div>
 										<div class="PercentLabel">
