@@ -22,6 +22,12 @@ class CompanyController extends Controller
     	return view('HW.index', compact('Companies'));
     }
 
+    public function overview(Company $company)
+    {
+        $Computers =  $company->computers;
+
+        return view('HW.CompanyOverview', compact('company'), compact('Computers'));
+    }
 
 	public function create()
     {

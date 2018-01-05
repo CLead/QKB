@@ -15,4 +15,23 @@ class HDUsage extends Model
     {
     	return $this->belongsTo(Computer::class, 'PCID', 'id');
     }
+
+    public function getPercentColour()
+    {
+    	if ($this->PercentageUsed > 90)
+    	{
+    		return 'FF0000';
+    	}
+    	else
+    	{
+    		if ($this->PercentageUsed > 60)
+    		{
+    			return 'FFFF00';
+    		}
+    		else
+    		{
+    			return '00FF00';
+    		}
+    	}
+    }
 }

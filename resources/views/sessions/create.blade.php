@@ -1,14 +1,33 @@
-@extends('layout.master')
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <title>Quad Knowledge Base</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">  
+        <link rel="stylesheet" href="{{ URL::asset('css/default.css') }}?t=51">
 
-@section('content')
+        
 
+    </head>
+    <body>
+
+    <header>
+    @include('layout.headbar')
+    </header>
+
+    <div id="main">
+        <div class="wrapper">
 
 
 <div class="wrapper blue-grey darken-4 loaded row">
-		
 
-		<div class="col s12 l4 offset-l4 m6 offset-m3 center z-depth-4 card-panel" style="margin-top:40px;">
+		<div class="col s12 l6 offset-l3 m6 offset-m3 center z-depth-4 card-panel" style="margin-top:40px;">
 			<form id="formLogin" method="POST" action="/login">
 			{{ csrf_field()}}
 		        <div class="row">
@@ -53,4 +72,18 @@ $(document).ready(function(){
 
 </div>
 
-@endsection
+
+        </div>        
+    </div>
+
+    <script>
+
+      $(function() {
+        $(".button-collapse").sideNav();
+      });
+
+
+    </script>
+
+    </body>
+</html>

@@ -43,3 +43,75 @@ div#JobList
 table.striped>tbody>tr:nth-child(odd) {
     background-color: #90a4ae ;
 }
+
+
+.DashboardLarge
+{
+	font-size: 26px;
+	padding:10px;
+	float:left;
+	align-content: center;
+	text-align: center;
+	width:200px;
+    
+}
+
+.DashboardLarge span.value
+{
+	padding:10px;
+}
+
+.DashboardLarge .Title
+{
+	color:#AAA;
+	font-size: 22px;
+	top:0;
+}
+
+.AVState0
+{
+	background-color: #EE0000A0;
+	border: 2px solid #EE0000FF;
+	color:#FFF;
+	padding: 2px;
+	margin:2px;
+}
+
+.AVState1
+{
+	background-color: #3b6d3bA0;
+	border: 2px solid #3b6d3bFF;
+	color:#FFF;
+	padding: 2px;
+	margin:2px;
+}
+
+div.PercentLabel
+{
+	position: relative;
+    top: -20px;
+    font-weight: 500;
+	color:#111;
+	padding-left: 5px;
+}
+
+div.PercentBack
+{
+	width:100%;
+	height:24px; 
+	background-color: #888;
+	border:2px solid #333; 
+	padding: 0;
+}
+
+div.PercentFore
+{
+	height:20px;
+	padding:0;
+	padding-left: 1px;
+}
+
+.LargeText
+{
+	font-size: 22px;
+}

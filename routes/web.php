@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function()
 	{
 		return view('home');
 	})->name("LandingPage");
+*/
+Route::get('/', 'DashboardController@index')->middleware('auth');
 Route::get('/dashboard', 'DashboardController@index')->name('Dashboard')->middleware('auth');
+Route::get('/overview', 'DashboardController@overview')->name('Overview')->middleware('auth');
+Route::get('/overview/company/{company}', 'CompanyController@overview')->name('CompanyOverview')->middleware('auth');
 Route::get('/articles', 'ArticlesController@index')->name("Articles")->middleware('auth');
 Route::get('/articles/search', 'ArticlesController@index')->name("ArticlesSearch")->middleware('auth');
 Route::post('/articles/search', 'ArticlesController@search')->name("ArticlePerformSearch")->middleware('auth');

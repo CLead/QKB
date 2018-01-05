@@ -21,4 +21,16 @@ class Company extends Model
     	return $this->hasMany(computer::class, 'CompanyID', 'id');
     }
 
+    public function getActiveComputers()
+   	{
+   		//Gets computers that have transferred in past 7 days
+   		return $this->Computers->where('LastTransfer', '>', Carbon::now()->subDays(7))->count(); 
+   	}
+
+   	public function getInActiveComputers()
+   	{
+   		//Gets computers that have transferred in past 7 days
+   		return $this->Computers->where('LastTransfer', '<=', Carbon::now()->subDays(7))->count(); 
+   	}
+
 }
