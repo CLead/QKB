@@ -56,7 +56,7 @@
 							@foreach($Computers as $Computer)
 					@foreach($Computers as $Computer)
 							<tr class="blue-grey lighten-1">
-								<td><i class="medium material-icons IconMiddle">personal_video</i> <b>{{ $Computer->PCName}}</b></td>
+								<td><i style="margin-left: 40px" class="medium material-icons IconMiddle">personal_video</i> <b>{{ $Computer->PCName}}</b></td>
 								<td>
 									@if(is_null($Computer->reportedHardware))
 									
