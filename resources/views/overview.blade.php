@@ -44,7 +44,7 @@
 			window.setInterval(ShowPanel, 50000);
 			var Height = ($(window).height()) - 100;
 
-			$Frame.attr('height', Height + ' %');
+			$Frame.attr('height', Height);
 		});
 
 		function ShowPanel()
