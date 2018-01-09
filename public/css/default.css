@@ -446,3 +446,9 @@ label.HWTitle
     display: inline-grid;
     color:#333;
 }
+
+
+.valign
+{
+    vertical-align: middle;
+}

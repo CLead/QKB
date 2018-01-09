@@ -18,7 +18,7 @@ class HDUsage extends Model
 
     public function getPercentColour()
     {
-    	if ($this->PercentageUsed > 90)
+    	if ($this->PercentageUsed >= 90)
     	{
     		return 'FF0000';
     	}

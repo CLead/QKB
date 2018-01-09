@@ -54,9 +54,8 @@
 						<tbody>
 							@foreach($Computers as $Computer)
 							@foreach($Computers as $Computer)
-					@foreach($Computers as $Computer)
 							<tr class="blue-grey lighten-1">
-								<td><i style="margin-left: 40px" class="medium material-icons IconMiddle">personal_video</i> <b>{{ $Computer->PCName}}</b></td>
+								<td><i style="margin-left: 40px" class="medium material-icons IconMiddle">personal_video</i> <b class="LargeText">{{ $Computer->PCName}}</b></td>
 								<td>
 									@if(is_null($Computer->reportedHardware))
 									
@@ -89,7 +88,6 @@
 							</tr>
 					@endforeach
 					@endforeach
-					@endforeach
 						</tbody>
 					</table>
 				</div>
@@ -97,15 +95,18 @@
 	</body>
 
 	<script>
+
+		var AnimateTime = {{ $Computers->count() }}* 2000 * 4;
+
 		setTimeout(PerformScroll, 5000);
-		setInterval(function(){PerformScroll();},25000);
+		setInterval(function(){PerformScroll();},(AnimateTime*2)+5000);
 
 		function PerformScroll()
 		{
-			$("html, body").animate({ scrollTop: $(document).height() }, 10000);
+			$("html, body").animate({ scrollTop: $(document).height()-600 }, AnimateTime);
 			setTimeout(function() 
 			{
-		   		$('html, body').animate({scrollTop:0}, 10000); 
+		   		$('html, body').animate({scrollTop:0}, AnimateTime); 
 			},5000);
 		}
 

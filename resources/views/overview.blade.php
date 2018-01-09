@@ -15,7 +15,7 @@
 		<title>Quad KB - Overview</title>
 	</head>
 	<body class="blue-grey darken-3">
-				<a href={{route("Dashboard")}}><i class="small material-icons IconMiddle">home</i>Home</a>
+		<a href={{route("Dashboard")}}><i class="small material-icons IconMiddle">home</i>Home</a>
 		<div class="card blue-grey darken-3">	
 			<div class="card-title blue-grey lighten-1 white-text center" style="border-bottom: 2px solid #444">
 				Company Overview Dashboard

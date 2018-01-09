@@ -32,8 +32,10 @@
 			{{ csrf_field()}}
 		        <div class="row">
 		          <div class="input-field col s12 center">
-		            <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-		            <p class="center login-form-text">Enter your credentials for Quad Knowledge Base</p>
+		            <p class="center login-form-text">
+		          		<i class=" material-icons medium valign " style="color:#FA0">error</i>
+		            	Enter your credentials for Quad Knowledge Base
+		            </p>
 		          </div>
 		        </div>
 		        <div class="row margin">
