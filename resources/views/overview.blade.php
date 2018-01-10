@@ -16,18 +16,16 @@
 	</head>
 	<body class="blue-grey darken-3">
 		<a href={{route("Dashboard")}}><i class="small material-icons IconMiddle">home</i>Home</a>
-		<div class="card blue-grey darken-3">	
+		<div class="card blue-grey darken-3">
+			<!--	
 			<div class="card-title blue-grey lighten-1 white-text center" style="border-bottom: 2px solid #444">
 				Company Overview Dashboard
 			</div>
 
-			<iframe style="border:0" width="100%" height="500px" id="CompanyPage"></iframe>
+			<iframe style="border:0" width="100%" id="CompanyPage"></iframe>
+			-->
+			<div id="Content" width="100%"></div>
 		</div>
-
-
-
-
-
 	<script>
 
 		var Pages = [];
@@ -39,19 +37,21 @@
 
 		$(function()
 		{
-			var $Frame = $("#CompanyPage")
-			$Frame.attr('src', Pages[Page]);
-			Page = (Page+1) % Pages.length;
-			window.setInterval(ShowPanel, 50000);
-			var Height = ($(window).height()) - 100;
-
-			$Frame.attr('height', Height);
+			ShowPanel2();
+			window.setInterval(ShowPanel2, 20000);
 		});
 
 		function ShowPanel()
 		{
 			var $Frame = $("#CompanyPage")
 			$Frame.attr('src', Pages[Page]);
+			Page = (Page+1) % Pages.length;
+		}
+
+		function ShowPanel2()
+		{
+			var $Frame = $("#Content");
+			$Frame.fadeOut(2000).delay(200).load(Pages[Page]).fadeIn(1000);
 			Page = (Page+1) % Pages.length;
 		}
 

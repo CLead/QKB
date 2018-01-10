@@ -31,6 +31,7 @@
 									<thead>
 										<th></th>
 										<th>Company Name</th>
+										<th></th>
 										<th>Assigned PCs</th>
 										<th>Enabled</th>
 										<th>Registration Code</th>
@@ -45,6 +46,12 @@
 
 											</td>
 											<td>{{ $company->CompanyName }}</td>
+											<td>
+												<a target="_new" href="{{Route('CompanyOverview', $company->id)}}">
+													<i class="material-icons tooltipped" data-position="bottom" data-delay="50" 
+													data-tooltip="Show Company Overview Dashboard">grid_on</i>
+												</a>
+											</td>
 											<td>
 												{{ count($company->computers) }}
 												@if (count($company->computers) > 0)

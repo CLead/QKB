@@ -17,7 +17,7 @@
                     <i class="material-icons">dashboard</i>Dashboard</a>
                 </li>
                 <li class="bold"><a href="<?php echo route('Overview');?>" class="waves-effect">
-                    <i class="material-icons">dashboard</i>Overview</a>
+                    <i class="material-icons">grid_on</i>Overview</a>
                 </li>
                 <li class="bold"><a href="{{ route('Articles') }}" class="waves-effect">
                     <i class="material-icons">help</i>Knowledge Base</a>

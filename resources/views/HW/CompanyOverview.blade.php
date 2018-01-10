@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -13,7 +14,7 @@
 
 		<title>Company Overview</title>
 	</head>
-	<body class="blue-grey darken-3">
+	<body class="blue-grey darken-3" style="overflow-y: hidden;">
         <div class="card-content white-text row">
         	<div class="col m8">
         		<h2>{{ $company->CompanyName }} - {{ $company->CompanyCode}}</h2>
@@ -37,13 +38,14 @@
 
 
 		</div>
-
+<!--
 			<div class="card-title blue-grey darken-2 white-text center">
 				Active Computers
 			</div>
-			<div style="padding:10px">
-				<div class="card-content white-text row">
-					<table class="bordered">
+-->
+			<div>
+				<div id="Container" class="card-content white-text row" style="overflow-y: hidden; border:2px solid #CCC">
+					<table id="tblComputers" class="bordered">
 						<thead>
 							<tr>
 								<th>PC Name</th>
@@ -53,14 +55,14 @@
 						</thead>
 						<tbody>
 							@foreach($Computers as $Computer)
-							@foreach($Computers as $Computer)
+@foreach($Computers as $Computer)
 							<tr class="blue-grey lighten-1">
-								<td><i style="margin-left: 40px" class="medium material-icons IconMiddle">personal_video</i> <b class="LargeText">{{ $Computer->PCName}}</b></td>
+								<td><i style="margin-left: 40px;" class="medium material-icons IconMiddle IconColour">personal_video</i> <b class="LargeText">{{ $Computer->PCName}}</b></td>
 								<td>
 									@if(is_null($Computer->reportedHardware))
 									
 									@else
-										<b class="LargeText">{{ $Computer->reportedHardware->PCDescription}}</b><br>
+										<b class="LargeText DesColour">{{ $Computer->reportedHardware->PCDescription}}</b><br>
 										<i>{{ $Computer->reportedHardware->OperatingSystem}}</i><br>
 										{{ $Computer->reportedHardware->LocalIP}}
 									@endif
@@ -88,6 +90,9 @@
 							</tr>
 					@endforeach
 					@endforeach
+							<tr>
+								<td class="blue-grey darken-3" style="text-align: center;" colspan="4">END
+							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -96,20 +101,28 @@
 
 	<script>
 
-		var AnimateTime = {{ $Computers->count() }}* 2000 * 4;
+		$(function() { 
+			var AnimateTime = {{ $Computers->count() }}* 2500;
 
-		setTimeout(PerformScroll, 5000);
-		setInterval(function(){PerformScroll();},(AnimateTime*2)+5000);
+			var Rows = {{ $Computers->count() }};
+			var nav  = $('#Container');
+			var Height = $('#tblComputers').innerHeight();
+			var Row = Rows;
 
-		function PerformScroll()
-		{
-			$("html, body").animate({ scrollTop: $(document).height()-600 }, AnimateTime);
-			setTimeout(function() 
+			var TopVal = nav.offset().top;
+			var NavHeight = $(window).height() - TopVal-80;
+			nav.height($(window).height() - TopVal-80);
+
+
+			setTimeout(PerformScroll, 1000);
+			setInterval(function(){PerformScroll();},(AnimateTime*2)+1000);
+
+			function PerformScroll()
 			{
-		   		$('html, body').animate({scrollTop:0}, AnimateTime); 
-			},5000);
-		}
-
+				nav.animate({scrollTop: Height-NavHeight }, AnimateTime);
+				nav.animate({scrollTop: 0 }, AnimateTime);
+			}
+		});
 	</script>
 
 </html>
