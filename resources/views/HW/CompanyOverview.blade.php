@@ -55,7 +55,6 @@
 						</thead>
 						<tbody>
 							@foreach($Computers as $Computer)
-@foreach($Computers as $Computer)
 							<tr class="blue-grey lighten-1">
 								<td><i style="margin-left: 40px;" class="medium material-icons IconMiddle IconColour">personal_video</i> <b class="LargeText">{{ $Computer->PCName}}</b></td>
 								<td>
@@ -89,7 +88,7 @@
 								</td>
 							</tr>
 					@endforeach
-					@endforeach
+					
 							<tr>
 								<td class="blue-grey darken-3" style="text-align: center;" colspan="4">END
 							</tr>
@@ -102,7 +101,7 @@
 	<script>
 
 		$(function() { 
-			var AnimateTime = {{ $Computers->count() }}* 2500;
+			var AnimateTime = {{ $Computers->count() }}* 3000;
 
 			var Rows = {{ $Computers->count() }};
 			var nav  = $('#Container');
