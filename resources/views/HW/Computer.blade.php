@@ -169,7 +169,7 @@
 												<td>{{$BU->Message}}</td>
 												@if ($BU->AlertState ==1)
 													<td class="">
-														Yes
+														<span class="msg">Yes</span>
 														<a href="#" class="btn red btn-small clearerror" tag="{{$BU->id}}"><i class="material-icons IconMiddle dp24">clear</i>  Clear Error</a>
 													</td>
 												@else
@@ -247,11 +247,37 @@
 		$(document).ready(function(){
 			$(".clearerror").click(function() 
 				{
-					alert("Clearing " + $(this).attr('tag'));
+					var BI = $(this).attr('tag');
+
+					var Button = $(this);
 
 
 
+					$.ajax(
+					{
+						method: "POST",
+	                    url: "http://toolkit.quad.co.uk/QKB/QKBService.asmx/ClearBUError",
+	                    dataType: "json",
+	                    data: { BUID: BI },
+						success: function (data) 
+							{
+	                            //var RetVal = data.Password;
+	                            if (data.Status == "200")
+	                            {
+	                            	$(Button).addClass("hidden");
+									$(Button).siblings().addClass('strikethrough');
+	                            }
+	                            else
+								{
+									alert("Error clearing error");
+								}
+	                        },
+	                    error: function (jqXHR, textStatus, errorThrown) 
+	                    	{
 
+	                            alert(errorThrown);
+	                        }
+					});
 				});
 /*
                     var ParentDiv = $(this).closest('.MapRow');

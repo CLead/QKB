@@ -452,3 +452,13 @@ label.HWTitle
 {
     vertical-align: middle;
 }
+
+.hidden
+{
+    display: none !important;
+}
+
+.strikethrough
+{
+    text-decoration: line-through;
+}
