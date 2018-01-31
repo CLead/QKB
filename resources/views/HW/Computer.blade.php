@@ -147,6 +147,49 @@
 								</div>
 
 							</tab>
+							<tab name="Backup State">
+								<h3 class="Dark">Backup Details (Last Ten Reports)</h3>
+								<div id="BackupStates" class="row">
+
+									@if (count($computer->LatestBackupStates)> 0)
+									<table>
+										<thead>
+											<tr>
+												<th>Date</th>
+												<th>Backup State</th>
+												<th>Message</th>
+												<th>Alert?</th>
+											</tr>
+										</thead>
+										<tbody>
+										@foreach ($computer->LatestBackupStates as $BU)
+											<tr>
+												<td>{{$BU->ReportDate}}</td>
+												<td>{{$BU->BackupState}}</td>
+												<td>{{$BU->Message}}</td>
+												@if ($BU->AlertState ==1)
+													<td class="">
+														Yes
+														<a href="#" class="btn red btn-small clearerror" tag="{{$BU->id}}"><i class="material-icons IconMiddle dp24">clear</i>  Clear Error</a>
+													</td>
+												@else
+													<td>
+														No
+													</td>
+												@endif
+											</tr>
+										@endforeach
+										</tbody>
+									</table>
+									@else
+										<div class="col s12 yellow lighten-4" style="margin:10px;">
+											<h3 class="Dark">No Backup Data Received For This Computer</h3>
+										</div>
+									@endif
+
+
+								</div>
+							</tab>
 							<tab name="Raw Data">
 								<h3 class="Dark">Last 10 data transfers from this computer: <a href="{{route('ComputerData', $computer->id)}}" class="btn yellow lighten-3 ForeDark">Show All</a></h3>
 
@@ -194,8 +237,36 @@
 		</div>
 	</div>
 	<script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+	<script src="/js/HW/ClearAlert.js"></script>
 	<script src="/js/HW/ComputerTabs.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 	<script src="/js/HW/hddchart.min.js"></script>
-	
+
+
+	<script>
+		$(document).ready(function(){
+			$(".clearerror").click(function() 
+				{
+					alert("Clearing " + $(this).attr('tag'));
+
+
+
+
+				});
+/*
+                    var ParentDiv = $(this).closest('.MapRow');
+                    
+
+                    if ($(ParentDiv).find(".MapSelect").val() == -1)
+                    {
+                        $(ParentDiv).addClass("bg-danger");
+                        Count++;
+                    }
+*/
+
+
+		})
+
+	</script>
+
 @endsection

@@ -23,15 +23,15 @@
 				<div class="DashboardLarge">
 					<div class="Title">Active PCs</div>
 					<div>
-						<i class="medium material-icons IconMiddle" style="color:#0FA;">personal_video</i>
-						<span class="value">{{ $company->getActiveComputers()}}</span>
+						<i class="medium material-icons IconMiddle IconColour">personal_video</i>
+						<span class="value white-text">{{ $company->getActiveComputers()}}</span>
 					</div>
 				</div>
 				<div class="DashboardLarge">
 					<div class="Title">Inactive PCs</div>
 					<div>
-						<i class="medium material-icons IconMiddle" style="color:#F50;">personal_video</i>
-						<span class="value">{{ $company->getInActiveComputers()}}</span>
+						<i class="medium material-icons IconMiddle IconColourInactive" >personal_video</i>
+						<span class="value white-text">{{ $company->getInActiveComputers()}}</span>
 					</div>
 				</div>
 			</div>
@@ -50,13 +50,17 @@
 							<tr>
 								<th>PC Name</th>
 								<th>Description</th>
+								<th>Backup State</th>
 								<th>AV State</th>
 								<th>HD Details</th>
 						</thead>
 						<tbody>
 							@foreach($Computers as $Computer)
 							<tr class="blue-grey lighten-1">
-								<td><i style="margin-left: 40px;" class="medium material-icons IconMiddle IconColour">personal_video</i> <b class="LargeText">{{ $Computer->PCName}}</b></td>
+								<td>
+									<i style="margin-left: 40px;" class="medium material-icons IconMiddle {{ $Computer->getComputerColour()}}">personal_video</i>
+									<b class="LargeText">{{ $Computer->PCName}}</b>
+								</td>
 								<td>
 									@if(is_null($Computer->reportedHardware))
 									
@@ -65,6 +69,9 @@
 										<i>{{ $Computer->reportedHardware->OperatingSystem}}</i><br>
 										{{ $Computer->reportedHardware->LocalIP}}
 									@endif
+								</td>
+								<td>
+									{!! $Computer->getBackupStateImage() !!}
 								</td>
 								<td>
 									@foreach($Computer->LatestAVInfo as $AV)
@@ -90,7 +97,7 @@
 					@endforeach
 					
 							<tr>
-								<td class="blue-grey darken-3" style="text-align: center;" colspan="4">END
+								<td class="blue-grey darken-3" style="text-align: center;" colspan="4">
 							</tr>
 						</tbody>
 					</table>

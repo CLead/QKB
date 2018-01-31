@@ -62,6 +62,9 @@ Route::get('/HW/Computers/Company/{company}', 'ComputerController@CompanyCompute
 Route::get('/HW/Computers/{computer}', 'ComputerController@show')->name('ComputersInfo')->middleware('auth');
 Route::get('/HW/Computers/{computer}/DataTransfers', 'ComputerController@showtransfers')->name('ComputerData')->middleware('auth');
 
+Route::get('/HW/Computers/{computer}/edit', 'ComputerController@edit')->name('ComputerEdit')->middleware('auth');
+Route::patch('/HW/Computers/{computer}', 'ComputerController@update')->name('ComputerUpdate')->middleware('auth');
+
 
 Route::get('/ajax', function() { return view('welcome');});
 

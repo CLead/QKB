@@ -21,16 +21,23 @@
 										<th></th>
 										<th>ID</th>
 										<th>Computer Name</th>
+										<th>Label</th>
 										<th>Date Enrolled</th>
+										<th>Last Update</th>										
 										<th>Identifier</th>
 									</thead>
 									<tbody>
 										@foreach ($company->computers as $Computer)
 										<tr>
-											<td><a href="{{route('ComputersInfo', $Computer->id) }}">Details</a></td>
+											<td>
+												<a href="{{route('ComputersInfo', $Computer->id) }}">Details</a>&nbsp;&nbsp;
+												<a href="{{route('ComputerEdit',  $Computer->id)}}">Edit</a>
+											</td>
 											<td>{{ $Computer->id }}</td>
 											<td><i class="material-icons left">personal_video</i>{{ $Computer->PCName}}</td>
-											<td>{{ $Computer->DateEnrolled}}
+											<td>{{ $Computer->QuadLabel}}</td>
+											<td>{{ $Computer->DateEnrolled}}</td>
+											<td>{{ $Computer->LastTransfer}}</td>
 											<td>{{ $Computer->Identifier}}</td>
 										</tr>
 											

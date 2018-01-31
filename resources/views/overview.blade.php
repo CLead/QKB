@@ -35,10 +35,15 @@
 
 		var Page = 0;
 
+		//$("#Content").height(400);
+
 		$(function()
 		{
-			ShowPanel2();
-			window.setInterval(ShowPanel2, 20000);
+			var $Frame = $("#Content");
+			$Frame.load(Pages[Page]);
+			Page = (Page+1) % Pages.length;
+			
+			window.setInterval(ShowPanel2, 60000);
 		});
 
 		function ShowPanel()

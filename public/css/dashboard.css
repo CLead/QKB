@@ -126,7 +126,27 @@ div.PercentFore
 	color:#0FA;
 }
 
+.IconColourError
+{
+	color:#ff1010;
+}
+
+.IconColourInactive
+{
+	color:#ff1a00;
+}
+
+.IconColourMissingData
+{
+	color:#b47a7d;
+}
+
 .DesColour
 {
 	color:#FAFAFA;
+}
+
+.center
+{
+	text-align: center;
 }

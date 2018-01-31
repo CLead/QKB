@@ -13,7 +13,7 @@ class Company extends Model
     protected $connection = 'SQLTK';
     protected $table = "Company";
 	
-	protected $fillable = ['CompanyCode', 'CompanyName', 'AdminEmail', 'RegistrationCode', 'updated_at'];
+	 protected $fillable = ['CompanyCode', 'CompanyName', 'AdminEmail', 'RegistrationCode', 'updated_at'];
 	//protected $primaryKey = 'ID';
 
     public function computers()
