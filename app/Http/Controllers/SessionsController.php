@@ -29,7 +29,7 @@ class SessionsController extends Controller
     {
     	auth()->logout();
 
-    	return redirect()->route("LandingPage");
+    	return redirect()->route("Dashboard");
     }
 
     public function store()
