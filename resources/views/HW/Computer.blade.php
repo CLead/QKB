@@ -190,6 +190,50 @@
 
 								</div>
 							</tab>
+							<tab name="Event Logs">
+								<h3 class="Dark">Last 20 Active Event Logs (uncleared warnings)</h3>
+								<div id="EventLogs" class="row">
+
+									@if (count($computer->LatestEventItems)> 0)
+									<table>
+										<thead>
+											<tr>
+												<th>Event Date</th>
+												<th>State</th>
+												<th>Source</th>
+												<th>Description</th>
+												<th>Clear Error?</th>
+											</tr>
+										</thead>
+										<tbody>
+										@foreach ($computer->LatestEventItems as $BU)
+											<tr>
+												<td>{{$BU->EventDate}}</td>
+												<td>
+													{{$BU->EventLevel}}
+												</td>
+												<td>{{$BU->EventProvider}}</td>
+												<td>{{$BU->EventDescription}}</td>
+												@if ($BU->DisplayWarning ==1)
+													<td class="">
+														<a href="#" class="btn red btn-small clearerror" tag="{{$BU->id}}"><i class="material-icons IconMiddle dp24">clear</i></a>
+													</td>
+												@else
+													<td>
+														-
+													</td>
+												@endif
+											</tr>
+										@endforeach
+										</tbody>
+									</table>
+									@else
+										<div class="col s12 yellow lighten-4" style="margin:10px;">
+											<h3 class="Dark">No Event Logs Obtained</h3>
+										</div>
+									@endif
+								</div>
+							</tab>
 							<tab name="Raw Data">
 								<h3 class="Dark">Last 10 data transfers from this computer: <a href="{{route('ComputerData', $computer->id)}}" class="btn yellow lighten-3 ForeDark">Show All</a></h3>
 
@@ -248,10 +292,7 @@
 			$(".clearerror").click(function() 
 				{
 					var BI = $(this).attr('tag');
-
 					var Button = $(this);
-
-
 
 					$.ajax(
 					{

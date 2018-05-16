@@ -27,6 +27,11 @@ class Computer extends Model
         return $this->hasMany(BackupState::class, 'PCID', 'id');
     }
 
+    public function eventitem()
+    {
+        return $this->hasMany(EventItem::class, 'PCID', 'id');
+    }
+
     public function reportedHardware()
     {
         return $this->hasOne(ReportedHardware::class, 'PCID', 'id');
@@ -64,6 +69,11 @@ class Computer extends Model
 		}
     }
 
+    public function LatestEventItems()
+    {
+        return $this->hasMany(EventItem::class, 'PCID', 'id')->where('DisplayWarning', 1)->orderby('EventDate', 'desc')->take(20);
+    }
+
     public function LatestBackupStates()
     {
         return $this->hasMany(BackupState::class, 'PCID', 'id')->orderby('ReportDate', 'desc')->take(10);
@@ -91,6 +101,27 @@ class Computer extends Model
         else
             return 'IconColourInactive';
     }
+
+    public function ApplicationErrorsDisplay()
+    {
+        $AlertCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=1', [$this->id, Carbon::now()->subDays(7)]);
+
+        if ($AlertCount[0]->Total == 0)
+            return "<i class='medium material-icons IconMiddle IconColour'>check</i><span class='IconColour LargeNumber'><b>0</b></span>";
+        else
+            return "<i class='medium material-icons IconMiddle IconColourInactive'>cancel</i><span class='IconColourInactive LargeNumber'><b>" . $AlertCount[0]->Total . "</b></span>";       //Has reports, all ok.
+    }
+
+    public function SystemErrorsDisplay()
+    {
+        $AlertCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=2', [$this->id, Carbon::now()->subDays(7)]);
+
+        if ($AlertCount[0]->Total == 0)
+            return "<i class='medium material-icons IconMiddle IconColour'>check</i><span class='IconColour LargeNumber'><b>0</b></span>";
+        else
+            return "<i class='medium material-icons IconMiddle IconColourInactive'>cancel</i><span class='IconColourInactive LargeNumber'><b>" . $AlertCount[0]->Total . "</b></span>";       //Has reports, all ok.
+    }
+
 
     public function getBackupState()
     {

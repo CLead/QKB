@@ -38,11 +38,6 @@
 
 
 		</div>
-<!--
-			<div class="card-title blue-grey darken-2 white-text center">
-				Active Computers
-			</div>
--->
 			<div>
 				<div id="Container" class="card-content white-text row" style="overflow-y: hidden; border:2px solid #CCC">
 					<table id="tblComputers" class="bordered">
@@ -50,6 +45,7 @@
 							<tr>
 								<th>PC Name</th>
 								<th>Description</th>
+								<th>Warning Events</th>
 								<th>Backup State</th>
 								<th>AV State</th>
 								<th>HD Details</th>
@@ -69,6 +65,10 @@
 										<i>{{ $Computer->reportedHardware->OperatingSystem}}</i><br>
 										{{ $Computer->reportedHardware->LocalIP}}
 									@endif
+								</td>
+								<td>
+									<p class="LargeText"><b>App:</b> {!! $Computer->ApplicationErrorsDisplay() !!}</p>
+									<p class="LargeText"><b>Sys:</b> {!! $Computer->SystemErrorsDisplay() !!}</p>
 								</td>
 								<td>
 									{!! $Computer->getBackupStateImage() !!}

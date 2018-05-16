@@ -53,27 +53,6 @@
 			]
 		]
 	},
-	"buffers":
-	[
-		{
-			"file": "config/adldap.php",
-			"settings":
-			{
-				"buffer_size": 9415,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/adldap_auth.php",
-			"settings":
-			{
-				"buffer_size": 7784,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
-	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -108,11 +87,6 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/E/xampp/htdocs/QKB",
-		"/E/xampp/htdocs/QKB/public"
-	],
 	"file_history":
 	[
 		"/E/xampp/htdocs/QKB/app/Http/Controllers/SessionsController.php",
@@ -300,78 +274,9 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "config/adldap.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9415,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3683,
-								3683
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2322.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "config/adldap_auth.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7784,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7380,
-								7380
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3942.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
-			]
-		}
-	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -405,7 +310,6 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "Solution.sublime-project",
 	"replace":
 	{
 		"height": 73.0
@@ -417,6 +321,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"companycon",
+				"app\\Http\\Controllers\\CompanyController.php"
+			],
+			[
+				"web",
+				"routes\\web.php"
+			],
 			[
 				"dashcss",
 				"public\\css\\dashboard.css"
@@ -466,7 +378,6 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
 	"settings":
 	{
 	},

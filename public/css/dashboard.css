@@ -86,6 +86,17 @@ table.striped>tbody>tr:nth-child(odd) {
 	margin:2px;
 }
 
+thead
+{
+	color:#fff;
+}
+
+.LargeNumber
+{
+	font-size: 34px;
+	font-weight: 800;
+}
+
 div.PercentLabel
 {
 	position: relative;

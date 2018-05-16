@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\computer;
 
-class BackupState extends Model
+class EventItem extends Model
 {
     protected $connection = 'SQLTK';
-    protected $table = "BackupStates";
+    protected $table = "EventItems";
 
 
     public function computer()
@@ -18,7 +18,7 @@ class BackupState extends Model
 
     public function getAlertText()
     {
-        if ($this->AlertState == 1)
+        if ($this->DisplayWarning == 1)
             return 'Yes';
         else
             return 'No';
