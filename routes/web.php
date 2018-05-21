@@ -65,6 +65,8 @@ Route::get('/HW/Computers/{computer}/DataTransfers', 'ComputerController@showtra
 Route::get('/HW/Computers/{computer}/edit', 'ComputerController@edit')->name('ComputerEdit')->middleware('auth');
 Route::patch('/HW/Computers/{computer}', 'ComputerController@update')->name('ComputerUpdate')->middleware('auth');
 
+Route::get('/HW/Computers/{computer}/Events', 'ComputerEventsController@ShowAll')->name('ComputerEvents')->middleware('auth');
+Route::get('/HW/Computers/{computer}/Events/S{Source}/L{Level}/W{Warn}', 'ComputerEventsController@filter')->name('ComputerEventsFilter')->middleware('auth');
 
 Route::get('/ajax', function() { return view('welcome');});
 

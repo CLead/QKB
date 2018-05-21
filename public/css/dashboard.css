@@ -97,6 +97,22 @@ thead
 	font-weight: 800;
 }
 
+.ErrCount
+{
+	text-align: center;
+}
+
+.ErrTable thead td
+{
+	text-align: center;
+}
+
+.lg-text
+{
+	color: #7aff80;
+}
+
+
 div.PercentLabel
 {
 	position: relative;
@@ -161,3 +177,4 @@ div.PercentFore
 {
 	text-align: center;
 }
+

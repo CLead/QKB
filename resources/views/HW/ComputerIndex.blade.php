@@ -21,6 +21,7 @@
 										<th></th>
 										<th>ID</th>
 										<th>Computer Name</th>
+										<th>View Logs</th>
 										<th>Label</th>
 										<th>Date Enrolled</th>
 										<th>Last Update</th>										
@@ -35,6 +36,9 @@
 											</td>
 											<td>{{ $Computer->id }}</td>
 											<td><i class="material-icons left">personal_video</i>{{ $Computer->PCName}}</td>
+											<td>
+												<a href="{{ route('ComputerEvents', $Computer->id) }}">View Logs</a>
+											</td>
 											<td>{{ $Computer->QuadLabel}}</td>
 											<td>{{ $Computer->DateEnrolled}}</td>
 											<td>{{ $Computer->LastTransfer}}</td>

@@ -45,7 +45,7 @@
 							<tr>
 								<th>PC Name</th>
 								<th>Description</th>
-								<th>Warning Events</th>
+								<th>Events</th>
 								<th>Backup State</th>
 								<th>AV State</th>
 								<th>HD Details</th>
@@ -67,8 +67,24 @@
 									@endif
 								</td>
 								<td>
-									<p class="LargeText"><b>App:</b> {!! $Computer->ApplicationErrorsDisplay() !!}</p>
-									<p class="LargeText"><b>Sys:</b> {!! $Computer->SystemErrorsDisplay() !!}</p>
+									<table class="ErrTable">
+										<thead>
+											<td></td>
+											<td>Warnings</td>
+											<td>Errors</td>
+											<td>Critical</td>
+										</thead>
+										<tbody>
+											<tr>
+												<td><span class="LargeText white-text">App</span></td>
+												{!! $Computer->ApplicationErrorsDisplay() !!}
+											</tr>
+											<tr>
+												<td><span class="LargeText white-text">Sys</span></td>
+												{!! $Computer->SystemErrorsDisplay() !!}
+											</tr>
+										</tbody>
+									</table>
 								</td>
 								<td>
 									{!! $Computer->getBackupStateImage() !!}

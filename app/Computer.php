@@ -104,22 +104,51 @@ class Computer extends Model
 
     public function ApplicationErrorsDisplay()
     {
-        $AlertCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=1', [$this->id, Carbon::now()->subDays(7)]);
+        $CriticalCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=1 AND EventLevel=4', [$this->id, Carbon::now()->subDays(7)]);
 
-        if ($AlertCount[0]->Total == 0)
-            return "<i class='medium material-icons IconMiddle IconColour'>check</i><span class='IconColour LargeNumber'><b>0</b></span>";
-        else
-            return "<i class='medium material-icons IconMiddle IconColourInactive'>cancel</i><span class='IconColourInactive LargeNumber'><b>" . $AlertCount[0]->Total . "</b></span>";       //Has reports, all ok.
+        $ErrorCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=1 AND EventLevel=2', [$this->id, Carbon::now()->subDays(7)]);
+
+        $WarningCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=1 AND EventLevel=3', [$this->id, Carbon::now()->subDays(7)]);
+
+        $CritClass = 'lg-text ';
+        $WarnClass = 'lg-text ';
+        $ErrorClass = 'lg-text ';
+
+        if ($CriticalCount[0]->Total > 0)
+            $CritClass = 'red-text';
+        
+        if ($ErrorCount[0]->Total > 0)
+            $ErrorClass = 'orange-text';
+
+        if ($WarningCount[0]->Total > 0)
+            $WarnClass = 'yellow-text';
+
+        return "<td class='LargeNumber ErrCount ". $WarnClass ."'>" . $WarningCount[0]->Total . "</td><td class='LargeNumber ErrCount ". $ErrorClass."'>" . $ErrorCount[0]->Total."</td><td class='LargeNumber ErrCount ". $CritClass ."'>" . $CriticalCount[0]->Total. "</td>";
+
     }
 
     public function SystemErrorsDisplay()
     {
-        $AlertCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=2', [$this->id, Carbon::now()->subDays(7)]);
+        $CriticalCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=2 AND EventLevel=4', [$this->id, Carbon::now()->subDays(7)]);
 
-        if ($AlertCount[0]->Total == 0)
-            return "<i class='medium material-icons IconMiddle IconColour'>check</i><span class='IconColour LargeNumber'><b>0</b></span>";
-        else
-            return "<i class='medium material-icons IconMiddle IconColourInactive'>cancel</i><span class='IconColourInactive LargeNumber'><b>" . $AlertCount[0]->Total . "</b></span>";       //Has reports, all ok.
+        $ErrorCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=2 AND EventLevel=2', [$this->id, Carbon::now()->subDays(7)]);
+
+        $WarningCount = DB::connection('SQLTK')->select('SELECT count(DisplayWarning) as Total FROM [QuadToolKit].[dbo].[EventItems] where PCID = ? AND EventDate >= ? AND LogSource=2 AND EventLevel=3', [$this->id, Carbon::now()->subDays(7)]);
+
+        $CritClass = 'lg-text';
+        $WarnClass = 'lg-text';
+        $ErrorClass = 'lg-text';
+
+        if ($CriticalCount[0]->Total > 0)
+            $CritClass = 'red-text';
+        
+        if ($ErrorCount[0]->Total > 0)
+            $ErrorClass = 'orange-text';
+
+        if ($WarningCount[0]->Total > 0)
+            $WarnClass = 'yellow-text';
+
+        return "<td class='LargeNumber ErrCount ". $WarnClass ."'>" . $WarningCount[0]->Total . "</td><td class='LargeNumber ErrCount ". $ErrorClass."'>" . $ErrorCount[0]->Total."</td><td class='LargeNumber ErrCount ". $CritClass ."'>" . $CriticalCount[0]->Total. "</td>";
     }
 
 

@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"Event",
+				"EventLevel"
+			],
+			[
+				"Even",
+				"EventLevel"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"order",
+				"orderby"
+			],
+			[
 				"Ri",
 				"RiskRegisterID"
 			],
@@ -89,6 +109,10 @@
 	},
 	"file_history":
 	[
+		"/E/xampp/htdocs/QKB/app/Computer.php",
+		"/E/xampp/htdocs/QKB/app/EventItem.php",
+		"/E/xampp/htdocs/QKB/public/web.config",
+		"/E/xampp/htdocs/QKB/app/BackupState.php",
 		"/E/xampp/htdocs/QKB/app/Http/Controllers/SessionsController.php",
 		"/E/xampp/htdocs/QKB/config/app.php",
 		"/E/xampp/htdocs/QKB/config/adldap_auth.php",
@@ -280,7 +304,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 41.0
 	},
 	"layout":
 	{
@@ -321,6 +345,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"computerer",
+				"app\\Http\\Controllers\\ComputerErrorController.php"
+			],
+			[
+				"we",
+				"routes\\web.php"
+			],
+			[
+				"web.config",
+				"public\\web.config"
+			],
 			[
 				"companycon",
 				"app\\Http\\Controllers\\CompanyController.php"
